@@ -24,4 +24,9 @@ public class Vars {
     public static String SG_NAME = "Survival Games";
     public static Material SG_MATERIAL = Material.STONE_SWORD;
 
+
+    //McPvP
+    public static String MCPVP_NAME = "McPvP";
+    public static Material MCPVP_MATERIAL = Material.MUSHROOM_STEW;
+
 }
