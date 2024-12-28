@@ -1,0 +1,8 @@
+name: GameServer
+version: '${project.version}'
+main: de.souperman.main.Main
+api-version: '1.21'
+
+commands:
+  join:
+    description: join a gamemode of your choice
