@@ -1,5 +1,6 @@
-package de.souperman.games;
+package de.souperman.games.survivalgames;
 
+import de.souperman.games.Game;
 import de.souperman.main.Main;
 import de.souperman.vars.Vars;
 import org.bukkit.entity.Player;
@@ -7,8 +8,8 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class SurvivalGames extends Game {
 
-    private int playersNeeded;
-    private int maxPlayers;
+    private final int playersNeeded;
+    private final int maxPlayers;
     private final int countdown = 30;
     private boolean runCountdown;
     private boolean runningCountdown;
@@ -22,7 +23,7 @@ public class SurvivalGames extends Game {
     }
 
     @Override
-    boolean leave(Player p) {
+    public boolean leave(Player p) {
         if (players.contains(p)) {
             players.remove(p);
             this.sendGameMessage(p.getDisplayName()+" left. ("+ players.size() +"/"+ maxPlayers +")");
@@ -41,7 +42,7 @@ public class SurvivalGames extends Game {
         if (!players.contains(p)) {
             players.add(p);
             if(players.size() >= playersNeeded) {
-                if(runningCountdown = false) {
+                if(!runningCountdown) {
                     runCountdown = true;
                     start();
                 }

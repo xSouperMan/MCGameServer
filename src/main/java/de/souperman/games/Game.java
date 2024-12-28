@@ -10,7 +10,7 @@ public abstract class Game {
 
     private boolean inProgress;
     private int elapsedTime;
-    ArrayList<Player> players;
+    protected ArrayList<Player> players;
     private Material icon;
     private String name;
 
@@ -31,9 +31,9 @@ public abstract class Game {
         return elapsedTime;
     }
 
-    abstract boolean leave(Player p);
+    protected abstract boolean leave(Player p);
 
-    abstract boolean join(Player p);
+    protected abstract boolean join(Player p);
 
     public boolean contains(Player p) {
         return players.contains(p);
