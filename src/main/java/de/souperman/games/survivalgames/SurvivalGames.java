@@ -3,8 +3,15 @@ package de.souperman.games.survivalgames;
 import de.souperman.games.Game;
 import de.souperman.main.Main;
 import de.souperman.vars.Vars;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.List;
 
 public class SurvivalGames extends Game {
 
@@ -41,6 +48,9 @@ public class SurvivalGames extends Game {
     public boolean join(Player p) {
         if (!players.contains(p)) {
             players.add(p);
+
+            updateInventory(p);
+
             if(players.size() >= playersNeeded) {
                 if(!runningCountdown) {
                     runCountdown = true;
@@ -67,5 +77,19 @@ public class SurvivalGames extends Game {
             }
         };
         run.runTaskTimer(Main.getPlugin(), 0, 20);
+    }
+
+    private void updateInventory(Player p) {
+        p.getInventory().clear();
+        Inventory SGinv = Bukkit.createInventory(p, 36);
+        ItemStack MapVote = new ItemStack(Material.PAPER);
+        ItemMeta MapVoteMeta = MapVote.getItemMeta();
+        MapVoteMeta.setMaxStackSize(1);
+        MapVoteMeta.setDisplayName("§aMap Vote");
+        List<String> MapVoteLore = MapVoteMeta.getLore();
+        MapVoteLore.add("Rightclick to Vote for a Map");
+
+        MapVoteMeta.setLore(MapVoteLore);
+        MapVote.setItemMeta(MapVoteMeta);
     }
 }
