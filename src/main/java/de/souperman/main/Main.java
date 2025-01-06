@@ -2,6 +2,7 @@ package de.souperman.main;
 
 import de.souperman.commands.CMDjoin;
 import de.souperman.listeners.EVENTjoin;
+import de.souperman.vars.Vars;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
@@ -23,10 +24,14 @@ public final class Main extends JavaPlugin {
         // register events
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new EVENTjoin(), this);
+        pm.registerEvents(new Lobby(), this);
 
         // register commands
         this.getCommand("join").setExecutor(new CMDjoin());
 
+        // initializer
+        Vars.gamesInit();
+        Lobby.lobbyInit();
     }
 
     @Override
@@ -42,4 +47,7 @@ public final class Main extends JavaPlugin {
     public static World getSpawnWorld() {
         return spawn;
     }
+
 }
+
+

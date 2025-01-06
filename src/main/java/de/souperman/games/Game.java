@@ -13,14 +13,16 @@ public abstract class Game {
     protected ArrayList<Player> players;
     private Material icon;
     private String name;
+    private String gameDescription;
 
-    public Game(Material icon, String name) {
+    public Game(Material icon, String name, String gameDescription) {
         Vars.games.add(this);
         elapsedTime = 0;
         inProgress = false;
         players = new ArrayList<Player>();
         this.icon = icon;
         this.name = name;
+        this.gameDescription = gameDescription;
     }
 
     public boolean isInProgress() {
@@ -46,6 +48,8 @@ public abstract class Game {
     public String getName() {
         return name;
     }
+
+    public String getDescription() {return gameDescription;}
 
     public void sendGameMessage(String message) {
         for(Player p: players) {

@@ -9,7 +9,7 @@ public class McPvP extends Game {
 
 
     public McPvP() {
-        super(Vars.MCPVP_MATERIAL, Vars.MCPVP_NAME);
+        super(Vars.MCPVP_MATERIAL, Vars.MCPVP_NAME, Vars.MCPVP_DESCRIPTION);
 
     }
 

@@ -4,7 +4,9 @@ import de.souperman.games.Game;
 import de.souperman.main.Main;
 import de.souperman.vars.Vars;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SurvivalGames extends Game implements Listener {
@@ -24,14 +27,26 @@ public class SurvivalGames extends Game implements Listener {
     private int countdown;
     private boolean runCountdown;
     private boolean runningCountdown;
+    private SGMap map;
 
-    public SurvivalGames(SGMap map) {
-        super(Vars.SG_MATERIAL, Vars.SG_NAME);
+    public SurvivalGames() {
+        super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESCRIPTION);
         playersNeeded = 2;
         fixedCountdown = 30;
         runCountdown = false;
         runningCountdown = false;
         maxPlayers = SGMap.getSize();
+        this.map = new SGMap("test", 20, new ArrayList<Location>());
+    }
+
+    public SurvivalGames(SGMap map) {
+        super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESCRIPTION);
+        playersNeeded = 2;
+        fixedCountdown = 30;
+        runCountdown = false;
+        runningCountdown = false;
+        maxPlayers = SGMap.getSize();
+        this.map = map;
     }
 
     @Override

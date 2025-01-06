@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Start Server">
-    <output-path>$PROJECT_DIR$/out/artifacts/Start_Server</output-path>
-    <root id="archive" name="Start Server.jar">
-      <element id="module-output" name="GameServer" />
-    </root>
-  </artifact>
-</component>
