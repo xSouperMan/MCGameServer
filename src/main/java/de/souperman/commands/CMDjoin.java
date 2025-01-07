@@ -18,8 +18,18 @@ public class CMDjoin implements CommandExecutor {
         Player p = (Player) sender;
 
 
-        if(args.length == 0) {
-            p.openInventory(Lobby.getGamemodeSelecter());
+        if(args.length == 1) {
+
+            if(!Lobby.getPlayers().contains(p)) {
+                p.sendMessage(Vars.PRFX_ERR+" You must be in the lobby to join a game!");
+                return false;
+            }
+
+            if((args[0].equalsIgnoreCase("survivalgames") || args[0].equalsIgnoreCase("sg")) && Lobby.getPlayers().contains(p)) {
+
+            }
+
+
             return false;
         }
 

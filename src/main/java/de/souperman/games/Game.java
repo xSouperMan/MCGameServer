@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public abstract class Game {
 
-    private boolean inProgress;
-    private int elapsedTime;
+    protected boolean inProgress;
+    protected int elapsedTime;
     protected ArrayList<Player> players;
     private Material icon;
     private String name;

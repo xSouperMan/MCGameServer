@@ -1,6 +1,7 @@
 package de.souperman.main;
 
 import de.souperman.commands.CMDjoin;
+import de.souperman.games.countershot.CounterShot;
 import de.souperman.listeners.EVENTjoin;
 import de.souperman.vars.Vars;
 import org.bukkit.Bukkit;
@@ -25,6 +26,7 @@ public final class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new EVENTjoin(), this);
         pm.registerEvents(new Lobby(), this);
+        pm.registerEvents(new CounterShot(), this);
 
         // register commands
         this.getCommand("join").setExecutor(new CMDjoin());

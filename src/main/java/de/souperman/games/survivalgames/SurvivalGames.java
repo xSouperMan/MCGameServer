@@ -30,7 +30,7 @@ public class SurvivalGames extends Game implements Listener {
     private SGMap map;
 
     public SurvivalGames() {
-        super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESCRIPTION);
+        super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESC);
         playersNeeded = 2;
         fixedCountdown = 30;
         runCountdown = false;
@@ -40,7 +40,7 @@ public class SurvivalGames extends Game implements Listener {
     }
 
     public SurvivalGames(SGMap map) {
-        super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESCRIPTION);
+        super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESC);
         playersNeeded = 2;
         fixedCountdown = 30;
         runCountdown = false;
@@ -66,7 +66,7 @@ public class SurvivalGames extends Game implements Listener {
 
     @Override
     public boolean join(Player p) {
-        if (!players.contains(p)) {
+        if(!players.contains(p) && players.size() < map.getSize()) {
             players.add(p);
 
             updateInventory(p);
