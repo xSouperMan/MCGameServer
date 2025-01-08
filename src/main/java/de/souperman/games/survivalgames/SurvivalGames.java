@@ -28,6 +28,7 @@ public class SurvivalGames extends Game implements Listener {
     private boolean runCountdown;
     private boolean runningCountdown;
     private SGMap map;
+    private static ArrayList<Player> players;
 
     public SurvivalGames() {
         super(Vars.SG_MATERIAL, Vars.SG_NAME, Vars.SG_DESC);
@@ -37,6 +38,7 @@ public class SurvivalGames extends Game implements Listener {
         runningCountdown = false;
         maxPlayers = SGMap.getSize();
         this.map = new SGMap("test", 20, new ArrayList<Location>());
+        players = new ArrayList<Player>();
     }
 
     public SurvivalGames(SGMap map) {
@@ -71,12 +73,10 @@ public class SurvivalGames extends Game implements Listener {
 
             updateInventory(p);
 
-            if(players.size() >= playersNeeded) {
-                if(!runningCountdown) {
-                    runCountdown = true;
-                    countdown = fixedCountdown;
-                    start();
-                }
+            if(players.size() >= playersNeeded && !runningCountdown) {
+                runCountdown = true;
+                countdown = fixedCountdown;
+                start();
             }
             return true;
         }
@@ -123,5 +123,10 @@ public class SurvivalGames extends Game implements Listener {
             Inventory SGinv = Bukkit.createInventory(p, 36);
 
         }
+    }
+
+    @Override
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 }

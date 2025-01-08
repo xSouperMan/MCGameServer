@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -56,8 +57,12 @@ public class Lobby implements Listener {
     public static void join(Player p)  {
         p.getInventory().clear();
         p.getInventory().setItem(4, Navigator);
-        p.teleport(Vars.GLOBAL_SPAWN);
+        p.teleport(Vars.LOBBY_SPAWN);
         players.add(p);
+    }
+
+    public static void leave(Player p) {
+        players.remove(p);
     }
 
     @EventHandler
@@ -90,5 +95,29 @@ public class Lobby implements Listener {
 
     public static ArrayList<Player> getPlayers() {
         return players;
+    }
+
+    @EventHandler
+    public static void onClick(InventoryClickEvent e) {
+        if(!(e.getWhoClicked() instanceof Player) || !e.getView().getTitle().equals("§5Select a GameMode")) { return; }
+        Player p = (Player) e.getWhoClicked();
+        if(!players.contains(p)) { return; }
+
+        e.setCancelled(true);
+
+        ItemStack item = e.getCurrentItem();
+        Material mat = item.getType();
+
+        for(Game game : Vars.games) {
+            if(game.getIcon() == mat) {
+                if(game.isInProgress()) {
+                    p.sendMessage(Vars.PRFX_ERR+"Game already in progress.");
+                    return;
+                }
+                p.closeInventory();
+                game.join(p);
+                leave(p);
+            }
+        }
     }
 }

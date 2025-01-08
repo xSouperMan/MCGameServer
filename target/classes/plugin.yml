@@ -6,3 +6,5 @@ api-version: '1.21'
 commands:
   join:
     description: join a gamemode of your choice
+  setspawn:
+    description: set the lobby spawn

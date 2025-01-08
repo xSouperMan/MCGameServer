@@ -1,8 +1,10 @@
 package de.souperman.main;
 
 import de.souperman.commands.CMDjoin;
+import de.souperman.commands.CMDsetspawn;
 import de.souperman.games.countershot.CounterShot;
 import de.souperman.listeners.EVENTjoin;
+import de.souperman.listeners.EVENTleave;
 import de.souperman.vars.Vars;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -22,18 +24,23 @@ public final class Main extends JavaPlugin {
 
         System.out.println("[GameServer] started.");
 
+        saveDefaultConfig();
+
         // register events
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new EVENTjoin(), this);
+        pm.registerEvents(new EVENTleave(), this);
         pm.registerEvents(new Lobby(), this);
         pm.registerEvents(new CounterShot(), this);
 
         // register commands
         this.getCommand("join").setExecutor(new CMDjoin());
+        this.getCommand("setspawn").setExecutor(new CMDsetspawn());
 
         // initializer
         Vars.gamesInit();
         Lobby.lobbyInit();
+        Vars.varsInit();
     }
 
     @Override

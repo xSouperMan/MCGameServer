@@ -10,16 +10,13 @@ public abstract class Game {
 
     protected boolean inProgress;
     protected int elapsedTime;
-    protected ArrayList<Player> players;
     private Material icon;
     private String name;
     private String gameDescription;
 
     public Game(Material icon, String name, String gameDescription) {
-        Vars.games.add(this);
         elapsedTime = 0;
         inProgress = false;
-        players = new ArrayList<Player>();
         this.icon = icon;
         this.name = name;
         this.gameDescription = gameDescription;
@@ -33,12 +30,12 @@ public abstract class Game {
         return elapsedTime;
     }
 
-    protected abstract boolean leave(Player p);
+    public abstract boolean leave(Player p);
 
-    protected abstract boolean join(Player p);
+    public abstract boolean join(Player p);
 
     public boolean contains(Player p) {
-        return players.contains(p);
+        return getPlayers().contains(p);
     }
 
     public Material getIcon() {
@@ -51,8 +48,10 @@ public abstract class Game {
 
     public String getDescription() {return gameDescription;}
 
+    public abstract ArrayList<Player> getPlayers();
+
     public void sendGameMessage(String message) {
-        for(Player p: players) {
+        for(Player p: getPlayers()) {
             p.sendMessage(message);
         }
     }
