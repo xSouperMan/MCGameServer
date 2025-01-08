@@ -2,7 +2,7 @@ package de.souperman.games.countershot;
 
 public enum CSWeaponType {
 
-    USPS,
+    USPS, //
     FIVESEVEN,
     MP9,
     M4A4,
@@ -20,6 +20,7 @@ public enum CSWeaponType {
     XM1015,
     P90,
     SSG08,
-    AWP
+    AWP,
+    KNIFE
 
 }

@@ -29,6 +29,8 @@ public class CounterShot extends Game implements Listener {
     private static int counter;
     private static boolean runningCountdown;
 
+    private static int round;
+
     private static ItemStack teamSelectItem;
     private static Inventory teamSelect;
     private static Inventory mapVote;
@@ -44,6 +46,7 @@ public class CounterShot extends Game implements Listener {
         super(Vars.CS_MATERIAL, Vars.CS_NAME, Vars.CS_DESC);
         counter = countdown;
         runningCountdown = false;
+        round = 0;
 
         players = new ArrayList<Player>();
         t = new ArrayList<Player>();
@@ -80,6 +83,7 @@ public class CounterShot extends Game implements Listener {
             p.teleport(Vars.CSLOBBY_SPAWN);
 
             p.getInventory().setItem(4, new ItemStack(Material.PAPER));
+            p.getInventory().setHeldItemSlot(4);
 
             if(players.size() >= playersNeeded && !runningCountdown) {
                 counter = countdown;
@@ -135,24 +139,40 @@ public class CounterShot extends Game implements Listener {
 
     private void startGame() {
         inProgress = true;
-        for(Player p : players) {
+        balanceTeams();
+        for(Player p : t) {
+            p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
+
         }
+        for(Player p : ct) {
+            p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
+            p.teleport(Vars.CSLOBBY_SPAWN);
+            for(int i = 0; i < 9; i++) {
+
+            }
+        }
+    }
+
+    private static void balanceTeams() {
+        //TODO
     }
 
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         Player p = e.getPlayer();
-        if(!players.contains(p)) {
-            p.sendMessage("test0");return;}
+        if(!players.contains(p)) { return; }
 
         if(inProgress) {
+            if((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)) {
 
 
-            p.sendMessage("test1");
+
+            } else if(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
+
+            }
 
         } else {
-            p.sendMessage("test2");
             if ((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) && p.getItemInHand().getType() == Material.PAPER) {
                 p.openInventory(teamSelect);
             }
@@ -181,10 +201,54 @@ public class CounterShot extends Game implements Listener {
 
         } else {
             switch (e.getView().getTitle()) {
+
+
                 case "Select Team":
                     e.setCancelled(true);
-                    Inventory inv = e.getClickedInventory();
+
+                    ItemStack clicked = e.getCurrentItem();
+
+                    switch (clicked.getType()) {
+                        case BOOK:
+                        case RED_STAINED_GLASS_PANE:
+                            if(ct.contains(p)) {
+                                ct.remove(p);
+                            }
+                            if(t.contains(p)) {
+                                p.sendMessage(Vars.PRFX_ERR+"You already set your preference to play as a §4Terrorist§f!");
+                            } else {
+                                t.add(p);
+                                p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §4Terrorist§f!");
+                            }
+                            break;
+                        case SHEARS:
+                        case BLUE_STAINED_GLASS_PANE:
+                            if(t.contains(p)) {
+                                t.remove(p);
+                            }
+                            if(ct.contains(p)) {
+                                p.sendMessage(Vars.PRFX_ERR+"You already set your preference to play as a §1Counter-Terrorist§f!");
+                            } else {
+                                ct.add(p);
+                                p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §1Counter-Terrorist§f!");
+                            }
+                            break;
+                        case GRAY_STAINED_GLASS_PANE:
+                                if(t.contains(p)) {
+                                    t.remove(p);
+                                    p.sendMessage(Vars.PRFX_SCS+"Preference reset!");
+                                } else if(ct.contains(p)) {
+                                    ct.remove(p);
+                                    p.sendMessage(Vars.PRFX_SCS+"Preference reset!");
+                                } else {
+                                    p.sendMessage(Vars.PRFX_ERR+"You haven't set any preference yet!");
+                                }
+                            break;
+                        default:
+                            break;
+                    }
                     break;
+
 
                 default:
                     return;
@@ -224,19 +288,17 @@ public class CounterShot extends Game implements Listener {
 
         ItemStack grayPane = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
         ItemMeta grayPaneMeta = grayPane.getItemMeta();
-        grayPaneMeta.setDisplayName("");
-        grayPaneMeta.setHideTooltip(true);
+        grayPaneMeta.setDisplayName("Reset Choice");
+        ArrayList<String> grayPaneLore = new ArrayList<String>();
+        grayPaneLore.add("§fClick to reset your selection");
+        grayPaneMeta.setLore(grayPaneLore);
         grayPane.setItemMeta(grayPaneMeta);
 
         for(int i = 0; i < teamSelect.getSize(); i++) {
             int mod = i % 9;
             switch (mod) {
                 case 0:
-                    teamSelect.setItem(i, grayPane);
-                    break;
                 case 4:
-                    teamSelect.setItem(i, grayPane);
-                    break;
                 case 8:
                     teamSelect.setItem(i, grayPane);
                     break;
