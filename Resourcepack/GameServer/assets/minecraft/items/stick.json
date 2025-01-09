@@ -1,0 +1,19 @@
+{
+	"model": {
+        "type": "select",
+        "property": "custom_model_data",
+        "fallback": {
+            "type": "model",
+            "model": "item/stick"
+        },
+        "cases": [
+            {
+                "when": "usps_base",
+                "model": {
+                    "type": "model",
+                    "model": "item/usps_base"
+                }
+            }
+        ]
+    }
+}
