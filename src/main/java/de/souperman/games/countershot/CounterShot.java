@@ -143,14 +143,27 @@ public class CounterShot extends Game implements Listener {
         for(Player p : t) {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
+            p.getInventory().clear();
+
+            Inventory inv = p.getInventory();
+            ItemStack glock = new ItemStack(Material.STICK);
+            ItemStack shop = new ItemStack(Material.EMERALD);
+
+            inv.setItem(0, glock);
+            inv.setItem(8, shop);
 
         }
         for(Player p : ct) {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
-            for(int i = 0; i < 9; i++) {
+            p.getInventory().clear();
 
-            }
+            Inventory inv = p.getInventory();
+            ItemStack usps = new ItemStack(Material.STICK);
+            ItemStack shop = new ItemStack(Material.EMERALD);
+
+            inv.setItem(0, usps);
+            inv.setItem(8, shop);
         }
     }
 
