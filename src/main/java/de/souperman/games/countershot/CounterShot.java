@@ -24,8 +24,8 @@ import java.util.ArrayList;
 public class CounterShot extends Game implements Listener {
 
     private static final int size = 10;
-    private static final int playersNeeded = 2;
-    private static final int countdown = 30;
+    private static final int playersNeeded = 1;
+    private static final int countdown = 5;
     private static int counter;
     private static boolean runningCountdown;
 
@@ -38,12 +38,16 @@ public class CounterShot extends Game implements Listener {
     private static ArrayList<Player> t;
     private static ArrayList<Player> ct;
     private static ArrayList<Player> players;
+    private static ArrayList<CSPlayer> CSplayers;
 
     private static BukkitRunnable run;
 
 
     public CounterShot() {
         super(Vars.CS_MATERIAL, Vars.CS_NAME, Vars.CS_DESC);
+
+        Main.getPluginManager().registerEvents(this, Main.getPlugin());
+
         counter = countdown;
         runningCountdown = false;
         round = 0;
@@ -51,6 +55,7 @@ public class CounterShot extends Game implements Listener {
         players = new ArrayList<Player>();
         t = new ArrayList<Player>();
         ct = new ArrayList<Player>();
+        CSplayers = new ArrayList<CSPlayer>();
 
         teamSelect = Bukkit.createInventory(null, 27, "Select Team");
         mapVote = Bukkit.createInventory(null, 36, "Pick a map");
@@ -138,18 +143,22 @@ public class CounterShot extends Game implements Listener {
     }
 
     private void startGame() {
-        inProgress = true;
+        this.inProgress = true;
         balanceTeams();
         for(Player p : t) {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
             p.getInventory().clear();
 
+            CSPlayer player = new CSPlayer(p, CSteam.TERRORIST);
+            CSplayers.add(player);
+
             Inventory inv = p.getInventory();
             ItemStack glock = new ItemStack(Material.STICK);
             ItemStack shop = new ItemStack(Material.EMERALD);
 
-            inv.setItem(0, glock);
+            inv.setItem(0, player.getKnifeItem());
+            inv.setItem(1, player.getPistolItem());
             inv.setItem(8, shop);
 
         }
@@ -158,11 +167,15 @@ public class CounterShot extends Game implements Listener {
             p.teleport(Vars.CSLOBBY_SPAWN);
             p.getInventory().clear();
 
+            CSPlayer player = new CSPlayer(p, CSteam.COUNTER_TERRORIST);
+            CSplayers.add(player);
+
             Inventory inv = p.getInventory();
             ItemStack usps = new ItemStack(Material.STICK);
             ItemStack shop = new ItemStack(Material.EMERALD);
 
-            inv.setItem(0, usps);
+            inv.setItem(0, player.getKnifeItem());
+            inv.setItem(1, player.getPistolItem());
             inv.setItem(8, shop);
         }
     }
@@ -171,15 +184,26 @@ public class CounterShot extends Game implements Listener {
         //TODO
     }
 
+    private CSPlayer getPlayer(Player p) throws Exception {
+        for(CSPlayer player : CSplayers) {
+            if(player.getPlayer() == p) {
+                return player;
+            }
+        }
+        throw new Exception("Player not found");
+    }
+
     @EventHandler
-    public void onInteract(PlayerInteractEvent e) {
+    public void onInteract(PlayerInteractEvent e) throws Exception {
         Player p = e.getPlayer();
         if(!players.contains(p)) { return; }
 
-        if(inProgress) {
+        if(this.inProgress) {
             if((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)) {
 
-
+                if(p.getItemInHand().getType() == Material.STICK) {
+                    getPlayer(p).getPistol().shoot(p);
+                }
 
             } else if(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
 
@@ -233,6 +257,7 @@ public class CounterShot extends Game implements Listener {
                                 t.add(p);
                                 p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §4Terrorist§f!");
                             }
+                            p.closeInventory();
                             break;
                         case SHEARS:
                         case BLUE_STAINED_GLASS_PANE:
@@ -245,6 +270,7 @@ public class CounterShot extends Game implements Listener {
                                 ct.add(p);
                                 p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §1Counter-Terrorist§f!");
                             }
+                            p.closeInventory();
                             break;
                         case GRAY_STAINED_GLASS_PANE:
                                 if(t.contains(p)) {
@@ -256,6 +282,7 @@ public class CounterShot extends Game implements Listener {
                                 } else {
                                     p.sendMessage(Vars.PRFX_ERR+"You haven't set any preference yet!");
                                 }
+                            p.closeInventory();
                             break;
                         default:
                             break;

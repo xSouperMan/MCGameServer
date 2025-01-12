@@ -16,6 +16,7 @@ public final class Main extends JavaPlugin {
 
     private static Plugin plugin;
     private static World spawn;
+    private static PluginManager pm;
 
     @Override
     public void onEnable() {
@@ -27,11 +28,10 @@ public final class Main extends JavaPlugin {
         saveDefaultConfig();
 
         // register events
-        PluginManager pm = Bukkit.getPluginManager();
+        pm = Bukkit.getPluginManager();
         pm.registerEvents(new EVENTjoin(), this);
         pm.registerEvents(new EVENTleave(), this);
         pm.registerEvents(new Lobby(), this);
-        pm.registerEvents(new CounterShot(), this);
 
         // register commands
         this.getCommand("join").setExecutor(new CMDjoin());
@@ -56,6 +56,8 @@ public final class Main extends JavaPlugin {
     public static World getSpawnWorld() {
         return spawn;
     }
+
+    public static PluginManager getPluginManager() { return pm; }
 
 }
 

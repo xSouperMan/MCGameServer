@@ -1,19 +1,27 @@
 {
-	"model": {
-        "type": "select",
-        "property": "custom_model_data",
-        "fallback": {
-            "type": "model",
-            "model": "item/stick"
+    "model": {
+      "type": "minecraft:range_dispatch",
+      "property": "minecraft:custom_model_data",
+      "index": 0,
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/stick"
+      },
+      "entries": [
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/usps_base"
+          },
+          "threshold": 10000001
         },
-        "cases": [
-            {
-                "when": "usps_base",
-                "model": {
-                    "type": "model",
-                    "model": "item/usps_base"
-                }
-            }
-        ]
+        {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/fiveseven_base"
+            },
+            "threshold": 10000002
+          }
+      ]
     }
-}
+  }
