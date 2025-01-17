@@ -20,6 +20,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CounterShot extends Game implements Listener {
 
@@ -180,8 +181,44 @@ public class CounterShot extends Game implements Listener {
         }
     }
 
-    private static void balanceTeams() {
-        //TODO
+    private static void balanceTeams() { // Imma make this more efficient at some point
+        int deltaT = players.size() - t.size();
+        int deltaCT = players.size() - ct.size();
+        if(players.size() % 2 == 0) { // teams can be the same size
+
+            if(deltaT > 0) {
+                for(int i = 0; i < deltaT; i++) {
+                    double rand = Math.random();
+                    int index = (int) (rand * t.size());
+                    ct.add(t.get(index));
+                    t.remove(index);
+                }
+            } else if(deltaCT > 0) {
+                for(int i = 0; i < deltaCT; i++) {
+                    double rand = Math.random();
+                    int index = (int) (rand * t.size());
+                    t.add(ct.get(index));
+                    ct.remove(index);
+                }
+            }
+
+                for(Player p : players) {
+                    if(t.contains(p) || ct.contains(p)) {
+                        continue;
+                    }
+                    if(Math.random() > 0.5 && t.size() < players.size() / 2) {
+                        t.add(p);
+                    } else if(ct.size() < players.size() / 2) {
+                        ct.add(p);
+                    } else {
+                        t.add(p);
+                    }
+                }
+        } else {
+            if(Math.random() > 0.5) {
+
+            }
+        }
     }
 
     private CSPlayer getPlayer(Player p) throws Exception {
