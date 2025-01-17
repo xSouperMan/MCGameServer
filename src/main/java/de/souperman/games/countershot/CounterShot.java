@@ -149,6 +149,8 @@ public class CounterShot extends Game implements Listener {
         for(Player p : t) {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
+            p.sendMessage(Vars.PRFX_SCS+"You start as a §4Terrorist§f!");
+            p.setDisplayName("§4"+p.getName());
             p.getInventory().clear();
 
             CSPlayer player = new CSPlayer(p, CSteam.TERRORIST);
@@ -166,6 +168,8 @@ public class CounterShot extends Game implements Listener {
         for(Player p : ct) {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
+            p.sendMessage(Vars.PRFX_SCS+"You start as a §1Counter-Terrorist§f!");
+            p.setDisplayName("§1"+p.getName());
             p.getInventory().clear();
 
             CSPlayer player = new CSPlayer(p, CSteam.COUNTER_TERRORIST);
@@ -181,23 +185,23 @@ public class CounterShot extends Game implements Listener {
         }
     }
 
-    private static void balanceTeams() { // Imma make this more efficient at some point
-        int deltaT = players.size() - t.size();
-        int deltaCT = players.size() - ct.size();
+    private static void balanceTeams() {
+        int deltaT = t.size() - (int) Math.ceil((double) players.size() /2);
+        int deltaCT = ct.size() - (int) Math.ceil((double) players.size() /2);
         if(players.size() % 2 == 0) { // teams can be the same size
 
             if(deltaT > 0) {
-                for(int i = 0; i < deltaT; i++) {
+                for(int i = 0; i < deltaT; i++) { // more than half are T's
                     double rand = Math.random();
                     int index = (int) (rand * t.size());
-                    ct.add(t.get(index));
+                    ct.add(t.get(index)); // move random t to ct
                     t.remove(index);
                 }
-            } else if(deltaCT > 0) {
+            } else if(deltaCT > 0) { // more than half are CT's
                 for(int i = 0; i < deltaCT; i++) {
                     double rand = Math.random();
                     int index = (int) (rand * t.size());
-                    t.add(ct.get(index));
+                    t.add(ct.get(index)); // move random ct to t
                     ct.remove(index);
                 }
             }
@@ -216,8 +220,39 @@ public class CounterShot extends Game implements Listener {
                 }
         } else {
             if(Math.random() > 0.5) {
-
+                deltaT += 1;
+            } else {
+                deltaCT += 1;
             }
+            if(deltaT > 0) {
+                for(int i = 0; i < deltaT; i++) { // more than half are T's
+                    double rand = Math.random();
+                    int index = (int) (rand * t.size());
+                    ct.add(t.get(index)); // move random t to ct
+                    t.remove(index);
+                }
+            } else if(deltaCT > 0) { // more than half are CT's
+                for(int i = 0; i < deltaCT; i++) {
+                    double rand = Math.random();
+                    int index = (int) (rand * t.size());
+                    t.add(ct.get(index)); // move random ct to t
+                    ct.remove(index);
+                }
+            }
+
+            for(Player p : players) {
+                if(t.contains(p) || ct.contains(p)) {
+                    continue;
+                }
+                if(Math.random() > 0.5 && t.size() < players.size() / 2) {
+                    t.add(p);
+                } else if(ct.size() < players.size() / 2) {
+                    ct.add(p);
+                } else {
+                    t.add(p);
+                }
+            }
+
         }
     }
 
