@@ -9,6 +9,7 @@ public class CSPlayer {
 
     private Player player;
     private int health;
+    private int money;
     private CSWeapon knife;
     private CSWeapon pistol;
     private CSWeapon secondary;
@@ -18,6 +19,7 @@ public class CSPlayer {
     public CSPlayer(Player player, CSteam team) {
         this.team = team;
         this.player = player;
+        this.money = 800;
         this.grenades = new ArrayList<CSGrenade>();
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));

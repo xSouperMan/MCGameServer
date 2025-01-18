@@ -30,6 +30,13 @@ public class CounterShot extends Game implements Listener {
     private static int counter;
     private static boolean runningCountdown;
 
+    private static final int buyPhaseTime = 20;
+    private static final int roundTime = 115;
+    private static final int bombTime = 115;
+    private static final int gameOverTime = 5;
+    private static int phaseCounter;
+
+    private static CSphase phase;
     private static int round;
 
     private static ItemStack teamSelectItem;
@@ -42,6 +49,7 @@ public class CounterShot extends Game implements Listener {
     private static ArrayList<CSPlayer> CSplayers;
 
     private static BukkitRunnable run;
+    private static BukkitRunnable gameRun;
 
 
     public CounterShot() {
@@ -52,6 +60,8 @@ public class CounterShot extends Game implements Listener {
         counter = countdown;
         runningCountdown = false;
         round = 0;
+        phaseCounter = 0;
+        phase = CSphase.PHASE_BUY;
 
         players = new ArrayList<Player>();
         t = new ArrayList<Player>();
@@ -64,7 +74,7 @@ public class CounterShot extends Game implements Listener {
 
         invInit();
         initRunnable();
-
+        initGameRunnable();
     }
 
     @Override
@@ -143,46 +153,39 @@ public class CounterShot extends Game implements Listener {
         };
     }
 
+    private void initGameRunnable() {
+        gameRun = new BukkitRunnable() {
+            @Override
+            public void run() {
+                switch (phase) {
+                    case PHASE_BUY:
+                        switch (phaseCounter) {
+                            case 0: // bomb timer runs out
+                                break;
+                        }
+                        break;
+                    case PHASE_GAME:
+                        break;
+                    case PHASE_BOMB:
+                        break;
+                    case PHASE_OVER:
+                        break;
+                    default:
+                        this.cancel();
+                        break;
+                }
+            }
+        };
+    }
+
     private void startGame() {
         this.inProgress = true;
         balanceTeams();
-        for(Player p : t) {
-            p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
-            p.teleport(Vars.CSLOBBY_SPAWN);
-            p.sendMessage(Vars.PRFX_SCS+"You start as a §4Terrorist§f!");
-            p.setDisplayName("§4"+p.getName());
-            p.getInventory().clear();
+        fillPlayerInventories();
+        phaseCounter = 20;
+        phase = CSphase.PHASE_BUY;
+        gameRun.runTaskTimer(Main.getPlugin(), 0, 20);
 
-            CSPlayer player = new CSPlayer(p, CSteam.TERRORIST);
-            CSplayers.add(player);
-
-            Inventory inv = p.getInventory();
-            ItemStack glock = new ItemStack(Material.STICK);
-            ItemStack shop = new ItemStack(Material.EMERALD);
-
-            inv.setItem(0, player.getKnifeItem());
-            inv.setItem(1, player.getPistolItem());
-            inv.setItem(8, shop);
-
-        }
-        for(Player p : ct) {
-            p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
-            p.teleport(Vars.CSLOBBY_SPAWN);
-            p.sendMessage(Vars.PRFX_SCS+"You start as a §1Counter-Terrorist§f!");
-            p.setDisplayName("§1"+p.getName());
-            p.getInventory().clear();
-
-            CSPlayer player = new CSPlayer(p, CSteam.COUNTER_TERRORIST);
-            CSplayers.add(player);
-
-            Inventory inv = p.getInventory();
-            ItemStack usps = new ItemStack(Material.STICK);
-            ItemStack shop = new ItemStack(Material.EMERALD);
-
-            inv.setItem(0, player.getKnifeItem());
-            inv.setItem(1, player.getPistolItem());
-            inv.setItem(8, shop);
-        }
     }
 
     private static void balanceTeams() {
@@ -253,6 +256,46 @@ public class CounterShot extends Game implements Listener {
                 }
             }
 
+        }
+    }
+
+    private void fillPlayerInventories() {
+        for(Player p : t) {
+            p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
+            p.teleport(Vars.CSLOBBY_SPAWN);
+            p.sendMessage(Vars.PRFX_SCS+"You start as a §4Terrorist§f!");
+            p.setDisplayName("§4"+p.getName());
+            p.getInventory().clear();
+
+            CSPlayer player = new CSPlayer(p, CSteam.TERRORIST);
+            CSplayers.add(player);
+
+            Inventory inv = p.getInventory();
+            ItemStack glock = new ItemStack(Material.STICK);
+            ItemStack shop = new ItemStack(Material.EMERALD);
+
+            inv.setItem(0, player.getKnifeItem());
+            inv.setItem(1, player.getPistolItem());
+            inv.setItem(8, shop);
+
+        }
+        for(Player p : ct) {
+            p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
+            p.teleport(Vars.CSLOBBY_SPAWN);
+            p.sendMessage(Vars.PRFX_SCS+"You start as a §1Counter-Terrorist§f!");
+            p.setDisplayName("§1"+p.getName());
+            p.getInventory().clear();
+
+            CSPlayer player = new CSPlayer(p, CSteam.COUNTER_TERRORIST);
+            CSplayers.add(player);
+
+            Inventory inv = p.getInventory();
+            ItemStack usps = new ItemStack(Material.STICK);
+            ItemStack shop = new ItemStack(Material.EMERALD);
+
+            inv.setItem(0, player.getKnifeItem());
+            inv.setItem(1, player.getPistolItem());
+            inv.setItem(8, shop);
         }
     }
 
