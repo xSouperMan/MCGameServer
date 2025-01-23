@@ -52,7 +52,7 @@ public class CounterShot extends Game implements Listener {
     private static BukkitRunnable gameRun;
 
 
-    public CounterShot() {
+    public CounterShot() { //test
         super(Vars.CS_MATERIAL, Vars.CS_NAME, Vars.CS_DESC);
 
         Main.getPluginManager().registerEvents(this, Main.getPlugin());
