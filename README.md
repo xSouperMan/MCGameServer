@@ -1,4 +1,4 @@
-#CounterShot
+# CounterShot
 
-###Using IDE:
+### Using IDE:
 IntelliJ
