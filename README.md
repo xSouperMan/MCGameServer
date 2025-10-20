@@ -1,0 +1,4 @@
+#CounterShot
+
+###Using IDE:
+IntelliJ
