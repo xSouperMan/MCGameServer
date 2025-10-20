@@ -7,12 +7,12 @@
 - 1.21.10
 
 
-## Games
+# Games
 
-### CounterShot (WIP)
-#### Description
+## CounterShot (WIP)
+### Description
 Two teams (Terrorist and Counter-Terrorists) fight against each other in a 5v5 bomb defuse situation. The Terrorists have to place a bomb while the Counter-Terrorists try to hinder the Terrorists by killing them or defuse the bomb.
 
-### McPvP (WIP)
+## McPvP (WIP)
 
-### SurvivalGames (WIP)
+## SurvivalGames (WIP)
