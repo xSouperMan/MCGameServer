@@ -58,6 +58,8 @@ public class Lobby implements Listener {
         p.getInventory().clear();
         p.getInventory().setItem(4, Navigator);
         p.teleport(Vars.LOBBY_SPAWN);
+        p.setFoodLevel(20);
+        p.setHealth(20);
         players.add(p);
     }
 

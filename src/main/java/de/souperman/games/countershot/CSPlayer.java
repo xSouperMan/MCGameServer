@@ -9,7 +9,7 @@ public class CSPlayer {
 
     private Player player;
     private double health;
-    private int money;
+    private int balance;
     private CSWeapon knife;
     private CSWeapon pistol;
     private CSWeapon secondary;
@@ -21,7 +21,7 @@ public class CSPlayer {
         this.team = team;
         this.player = player;
         this.health = 100;
-        this.money = 800;
+        this.balance = 800;
         this.grenades = new ArrayList<CSGrenade>();
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
@@ -43,6 +43,13 @@ public class CSPlayer {
     public void setPistol(CSWeapon pistol) { this.pistol = pistol; }
 
     public void setAlive(boolean b) { this.isAlive = b; }
+
+    public void addBalance(int amount) {
+        balance += amount;
+        player.sendMessage("§a+"+amount+"$");
+    }
+
+    public void setBalance(int amount) { balance = amount; }
 
     public CSWeapon getKnife() {
         return knife;
@@ -67,6 +74,8 @@ public class CSPlayer {
     public ItemStack getSecondaryItem() {
         return secondary.getItem();
     }
+
+    public int getBalance() { return this.balance; }
 
     public Player getPlayer() {
         return player;

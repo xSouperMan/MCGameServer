@@ -454,16 +454,17 @@ public class CSWeapon {
         player.getWorld().spawnParticle(Particle.POOF, player.getEyeLocation(), 1, 0, 0, 0);
         int maxdist = (int) Math.round(particleCount * step);
         double drawDist = firstSolidBlockDistance(start, direction, maxdist);
-        for (int i = 0; i < drawDist/step; i++) {
-            if (i == 0) { continue; }
-
+        for (int i = 1; i < drawDist / step; i++) {
             Location particleLocation = start.clone().add(direction.clone().multiply(i * step));
             player.getWorld().spawnParticle(particle, particleLocation, 1, 0, 0, 0);
         }
-        BlockData data = Objects.requireNonNull(player.getTargetBlockExact(300)).getBlockData();
-        if(drawDist < maxdist) {
 
-            player.getWorld().spawnParticle(Particle.BLOCK, start.clone().add(direction.clone().multiply(drawDist)), damage/2, 0.35, 0.35, 0.35, 0.12, data);
+        RayTraceResult rr = start.getWorld().rayTraceBlocks(start, direction, maxdist, FluidCollisionMode.NEVER, true);
+        if (rr != null && rr.getHitBlock() != null) {
+            BlockData data = rr.getHitBlock().getBlockData();
+            Location hitLoc = rr.getHitPosition().toLocation(player.getWorld());
+            int count = Math.max(1, damage / 2);
+            player.getWorld().spawnParticle(Particle.BLOCK, hitLoc, count, 0.35, 0.35, 0.35, 0.12, data);
         }
         ArrayList<ShotHit> hits = calculatePlayersHitByShot(csplayer, players, start, direction, drawDist);
         hits.sort((a, b) -> Double.compare(a.t, b.t));

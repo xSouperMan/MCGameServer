@@ -4,6 +4,9 @@ import de.souperman.games.Game;
 import de.souperman.main.Main;
 import de.souperman.vars.Vars;
 import org.bukkit.*;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,7 +29,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CounterShot extends Game implements Listener {
 
     private static final int size = 10;
-    private static final int playersNeeded = 1;
+    private static final int playersNeeded = 2;
     private static final int countdown = 5;
     private static int counter;
     private static boolean runningCountdown;
@@ -43,6 +46,8 @@ public class CounterShot extends Game implements Listener {
     private static ItemStack teamSelectItem;
     private static Inventory teamSelect;
     private static Inventory mapVote;
+    private static Inventory shopCT;
+    private static Inventory shopT;
 
     private static ArrayList<Player> t;
     private static ArrayList<Player> ct;
@@ -51,6 +56,8 @@ public class CounterShot extends Game implements Listener {
 
     private static BukkitRunnable run;
     private static BukkitRunnable gameRun;
+
+    private static BossBar buyPhaseTimerBossBar;
 
 
     public CounterShot() { //test
@@ -73,6 +80,14 @@ public class CounterShot extends Game implements Listener {
         mapVote = Bukkit.createInventory(null, 36, "Pick a map");
         teamSelectItem = new ItemStack(Material.PAPER);
 
+        buyPhaseTimerBossBar = Bukkit.createBossBar(
+               "§a$ §fBuy Phase §a$",
+                BarColor.GREEN,
+                BarStyle.SOLID
+        );
+        buyPhaseTimerBossBar.setProgress(0d);
+        buyPhaseTimerBossBar.setVisible(false);
+
         invInit();
         initRunnable();
         initGameRunnable();
@@ -82,7 +97,7 @@ public class CounterShot extends Game implements Listener {
     public boolean leave(Player p) {
         if(players.contains(p)) {
             players.remove(p);
-
+            buyPhaseTimerBossBar.removePlayer(p);
             if(players.size() < playersNeeded) {
                 run.cancel();
                 runningCountdown = false;
@@ -103,6 +118,7 @@ public class CounterShot extends Game implements Listener {
             p.getInventory().setHeldItemSlot(4);
             p.setHealth(20);
             p.setFoodLevel(20);
+            buyPhaseTimerBossBar.addPlayer(p);
 
             if(players.size() >= playersNeeded && !runningCountdown) {
                 counter = countdown;
@@ -156,34 +172,45 @@ public class CounterShot extends Game implements Listener {
         };
     }
 
+    private void switchPhase(CSphase phse) {
+        for(CSPlayer p : CSplayers) {
+            p.getPlayer().closeInventory();
+        }
+        switch (phse) {
+            case PHASE_BUY:
+                phase = phse;
+                buyPhaseTimerBossBar.setVisible(true);
+                break;
+            case PHASE_GAME:
+                phase = phse;
+                buyPhaseTimerBossBar.setVisible(false);
+                break;
+            case PHASE_LOBBY:
+                phase = phse;
+                buyPhaseTimerBossBar.setVisible(false);
+                break;
+            default:
+                phase = phse;
+        }
+    }
+
     private void initGameRunnable() {
         gameRun = new BukkitRunnable() {
             @Override
             public void run() {
                 switch (phase) {
                     case PHASE_BUY:
+                        buyPhaseTimerBossBar.setProgress((double) phaseCounter /20);
                         switch (phaseCounter) {
                             case 20:
-                                sendGameMessage("Buy phase started. Open the shop to buy equipment");
-                                break;
-                            case 5:
-                                sendGameMessage("Buy phase is over in 5 seconds");
-                                break;
-                            case 4:
-                                sendGameMessage("Buy phase is over in 4 seconds");
-                                break;
-                            case 3:
-                                sendGameMessage("Buy phase is over in 3 seconds");
-                                break;
-                            case 2:
-                                sendGameMessage("Buy phase is over in 2 seconds");
-                                break;
-                            case 1:
-                                sendGameMessage("Buy phase is over in 1 seconds");
+                                for(CSPlayer p : CSplayers) {
+                                    p.getPlayer().sendTitle("Buy Phase", "Open the shop to buy equipment!", 0, 160, 40);
+                                    p.getPlayer().sendMessage("Current balance: §a"+p.getBalance()+"$");
+                                }
                                 break;
                             case 0: // buy phase over -> game phase starts
                                 sendGameMessage("Buy phase ended.");
-                                phase = CSphase.PHASE_GAME;
+                                switchPhase(CSphase.PHASE_GAME);
                                 phaseCounter = roundTime + 1;
                                 break;
                         }
@@ -216,7 +243,7 @@ public class CounterShot extends Game implements Listener {
         balanceTeams();
         fillPlayerInventories();
         phaseCounter = buyPhaseTime;
-        phase = CSphase.PHASE_BUY;
+        switchPhase(CSphase.PHASE_BUY);
         gameRun.runTaskTimer(Main.getPlugin(), 0, 20);
 
     }
@@ -314,20 +341,31 @@ public class CounterShot extends Game implements Listener {
 
         if(this.inProgress) {
             if((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)) {
+                e.setCancelled(true);
+                if(phase == CSphase.PHASE_GAME || phase == CSphase.PHASE_BOMB) {
+                    switch (p.getItemInHand().getType()) {
+                        case STICK:
+                            getPlayer(p).getPistol().shoot(getPlayer(p), CSplayers);
+                            break;
 
-                switch (p.getItemInHand().getType()) {
-                    case STICK:
-                        getPlayer(p).getPistol().shoot(getPlayer(p), CSplayers);
-                        break;
+                        case BREEZE_ROD:
+                            getPlayer(p).getSecondary().shoot(getPlayer(p), CSplayers);
+                            break;
 
-                    case BREEZE_ROD:
-                        getPlayer(p).getSecondary().shoot(getPlayer(p), CSplayers);
-                        break;
+                        case BONE:
+                            getPlayer(p).getKnife().meele(p, CSMeeleType.STRONG);
+                            break;
 
-                    case BONE:
-                        getPlayer(p).getKnife().meele(p, CSMeeleType.STRONG);
-                        break;
-
+                    }
+                } else if(phase == CSphase.PHASE_BUY) {
+                    switch (p.getItemInHand().getType()) {
+                        case EMERALD:
+                            if(ct.contains(p)) {
+                                p.openInventory(shopCT);
+                            } else if(t.contains(p)) {
+                                p.openInventory(shopT);
+                            }
+                    }
                 }
 
             } else if(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
@@ -344,6 +382,8 @@ public class CounterShot extends Game implements Listener {
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {
+        if(players == null) { return; }
+
         if(!(e.getWhoClicked() instanceof Player)) { return; }
         Player p = (Player) e.getWhoClicked();
         if(!players.contains(p)) {return;}
@@ -426,7 +466,9 @@ public class CounterShot extends Game implements Listener {
 
     @EventHandler
     public void onMove(PlayerMoveEvent e) {
-        if(phase != CSphase.PHASE_BUY) {return;}
+        if(players == null) { return; }
+
+        if(phase != CSphase.PHASE_BUY || !players.contains(e.getPlayer())) {return;}
         Location from = e.getFrom();
         Location to = e.getTo();
         if (to == null) return;
@@ -442,6 +484,8 @@ public class CounterShot extends Game implements Listener {
 
     @EventHandler
     public void onHunger(FoodLevelChangeEvent e) {
+        if(players == null) { return; }
+
         if(e.getEntity() instanceof Player) {
             Player p = (Player) e.getEntity();
             if(players.contains(p)) {
@@ -452,6 +496,8 @@ public class CounterShot extends Game implements Listener {
 
     @EventHandler
     public void onRegen(EntityRegainHealthEvent e) {
+        if(players == null) { return; }
+
         if(e.getEntity() instanceof Player) {
             Player p = (Player) e.getEntity();
             if(players.contains(p)) {
@@ -461,6 +507,8 @@ public class CounterShot extends Game implements Listener {
     }
 
     private static void invInit() {
+
+        // TEAM SELECT INVENTORY -----------------------------
 
         ItemStack t_icon = new ItemStack(Material.BOOK);
         ItemStack t_pane = new ItemStack(Material.RED_STAINED_GLASS_PANE);
@@ -514,6 +562,17 @@ public class CounterShot extends Game implements Listener {
 
         teamSelect.setItem(11, t_icon);
         teamSelect.setItem(15, ct_icon);
+
+        //-----------------------------------------
+
+        // SHOPS INVENTORY ------------------------
+
+        shopCT = Bukkit.createInventory(null, 37);
+        shopT = Bukkit.createInventory(null, 37);
+
+        //items for both teams:
+        ItemStack grenade = new ItemStack(Material.AIR); //TODO...
+
     }
 
     private static void initWeapons() {
