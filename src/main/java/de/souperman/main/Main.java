@@ -7,6 +7,7 @@ import de.souperman.listeners.EVENTjoin;
 import de.souperman.listeners.EVENTleave;
 import de.souperman.vars.Vars;
 import org.bukkit.Bukkit;
+import org.bukkit.GameRule;
 import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -26,6 +27,11 @@ public final class Main extends JavaPlugin {
         getLogger().info("[GameServer] started.");
 
         saveDefaultConfig();
+
+        spawn.setStorm(false);
+        spawn.setThundering(false);
+        spawn.setWeatherDuration(999999);
+        spawn.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
 
         // register events
         pm = Bukkit.getPluginManager();

@@ -1,149 +1,658 @@
-[19:53:35] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[19:53:36] [ServerMain/INFO]: Loaded 1461 recipes
-[19:53:37] [Server thread/INFO]: Starting minecraft server version 1.21.10
-[19:53:37] [Server thread/INFO]: Loading properties
-[19:53:37] [Server thread/INFO]: This server is running CraftBukkit version 4543-Spigot-6e369ba-172ebc6 (MC: 1.21.10) (Implementing API version 1.21.10-R0.1-SNAPSHOT)
-[19:53:37] [Server thread/INFO]: *** This version of Spigot contains changes to some enums. If you notice that plugins no longer work after updating, please report this to the developers of those plugins first. ***
-[19:53:37] [Server thread/INFO]: *** If you cannot update those plugins, you can try setting `settings.compatibility.enum-compatibility-mode` to `true` in `bukkit.yml`. ***
-[19:53:37] [Server thread/INFO]: Debug logging is disabled
-[19:53:37] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:53:37] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:53:37] [Server thread/INFO]: Default game type: SURVIVAL
-[19:53:37] [Server thread/INFO]: Generating keypair
-[19:53:37] [Server thread/INFO]: Starting Minecraft server on *:25565
-[19:53:37] [Server thread/INFO]: Using default channel type
-[19:53:37] [Server thread/INFO]: [GameServer] Loading GameServer v1.0
-[19:53:37] [Server thread/INFO]: Preparing level "world"
-[19:53:37] [Server thread/INFO]: -------- World Settings For [world] --------
-[19:53:37] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[19:53:37] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[19:53:37] [Server thread/INFO]: Item Merge Radius: 2.5
-[19:53:37] [Server thread/INFO]: View Distance: 10
-[19:53:37] [Server thread/INFO]: Experience Merge Radius: 3.0
-[19:53:37] [Server thread/INFO]: Mob Spawn Range: 6
-[19:53:37] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
-[19:53:37] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
-[19:53:37] [Server thread/INFO]: Max TNT Explosions: 100
-[19:53:37] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[19:53:37] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[19:53:37] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Cane Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Melon Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Beetroot Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Carrot Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Potato Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Vine Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Bamboo Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Kelp Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: CaveVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
-[19:53:37] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
-[19:53:37] [Server thread/INFO]: Simulation Distance: 10
-[19:53:37] [Server thread/INFO]: Item Despawn Rate: 6000
-[19:53:37] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
-[19:53:37] [Server thread/INFO]: -------- World Settings For [world_nether] --------
-[19:53:37] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[19:53:37] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[19:53:37] [Server thread/INFO]: Item Merge Radius: 2.5
-[19:53:37] [Server thread/INFO]: View Distance: 10
-[19:53:37] [Server thread/INFO]: Experience Merge Radius: 3.0
-[19:53:37] [Server thread/INFO]: Mob Spawn Range: 6
-[19:53:37] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
-[19:53:37] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
-[19:53:37] [Server thread/INFO]: Max TNT Explosions: 100
-[19:53:37] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[19:53:37] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[19:53:37] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Cane Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Melon Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Beetroot Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Carrot Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Potato Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Vine Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Bamboo Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Kelp Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: CaveVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
-[19:53:37] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
-[19:53:37] [Server thread/INFO]: Simulation Distance: 10
-[19:53:37] [Server thread/INFO]: Item Despawn Rate: 6000
-[19:53:37] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
-[19:53:37] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
-[19:53:37] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[19:53:37] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[19:53:37] [Server thread/INFO]: Item Merge Radius: 2.5
-[19:53:37] [Server thread/INFO]: View Distance: 10
-[19:53:37] [Server thread/INFO]: Experience Merge Radius: 3.0
-[19:53:37] [Server thread/INFO]: Mob Spawn Range: 6
-[19:53:37] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
-[19:53:37] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
-[19:53:37] [Server thread/INFO]: Max TNT Explosions: 100
-[19:53:37] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[19:53:37] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[19:53:37] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Cane Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Melon Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Beetroot Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Carrot Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Potato Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Vine Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Bamboo Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Kelp Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: CaveVines Growth Modifier: 100%
-[19:53:37] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
-[19:53:37] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
-[19:53:37] [Server thread/INFO]: Simulation Distance: 10
-[19:53:37] [Server thread/INFO]: Item Despawn Rate: 6000
-[19:53:37] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
-[19:53:37] [Server thread/INFO]: Loading 0 persistent chunks...
-[19:53:37] [Server thread/INFO]: Time elapsed: 0 ms
-[19:53:37] [Server thread/INFO]: [GameServer] Enabling GameServer v1.0
-[19:53:37] [Server thread/INFO]: [GameServer] [GameServer] started.
-[19:53:37] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:53:37] [Server thread/INFO]: Done (0.341s)! For help, type "help"
-[19:53:40] [User Authenticator #1/INFO]: UUID of player SouperMan is 53c78e30-6df5-4af5-bee7-a4d7dfa4a290
-[19:53:41] [Server thread/INFO]: SouperMan joined the game
-[19:53:41] [Server thread/INFO]: SouperMan[/127.0.0.1:59101] logged in with entity id 1 at ([world]0.0, 0.0, 0.0)
-[19:56:18] [Server thread/INFO]: SouperMan issued server command: /stop
-[19:56:18] [Server thread/INFO]: [SouperMan: Stopping the server]
-[19:56:18] [Server thread/INFO]: Stopping server
-[19:56:18] [Server thread/INFO]: [GameServer] Disabling GameServer v1.0
-[19:56:18] [Server thread/INFO]: [GameServer] [GameServer] stopped.
-[19:56:18] [Server thread/INFO]: Saving players
-[19:56:18] [Server thread/INFO]: SouperMan lost connection: Server closed
-[19:56:18] [Server thread/INFO]: SouperMan left the game.
-[19:56:18] [Server thread/INFO]: Saving worlds
-[19:56:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[19:56:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[19:56:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[19:56:18] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[19:56:18] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[19:56:18] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[19:56:18] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[23:26:08] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[23:26:10] [ServerMain/INFO]: Loaded 1461 recipes
+[23:26:10] [Server thread/INFO]: Starting minecraft server version 1.21.10
+[23:26:10] [Server thread/INFO]: Loading properties
+[23:26:10] [Server thread/INFO]: This server is running CraftBukkit version 4543-Spigot-6e369ba-172ebc6 (MC: 1.21.10) (Implementing API version 1.21.10-R0.1-SNAPSHOT)
+[23:26:11] [Server thread/INFO]: *** This version of Spigot contains changes to some enums. If you notice that plugins no longer work after updating, please report this to the developers of those plugins first. ***
+[23:26:11] [Server thread/INFO]: *** If you cannot update those plugins, you can try setting `settings.compatibility.enum-compatibility-mode` to `true` in `bukkit.yml`. ***
+[23:26:11] [Server thread/INFO]: Debug logging is disabled
+[23:26:11] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:26:11] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:26:11] [Server thread/INFO]: Default game type: SURVIVAL
+[23:26:11] [Server thread/INFO]: Generating keypair
+[23:26:11] [Server thread/INFO]: Starting Minecraft server on *:25565
+[23:26:11] [Server thread/INFO]: Using default channel type
+[23:26:11] [Server thread/INFO]: [GameServer] Loading GameServer v1.0
+[23:26:11] [Server thread/INFO]: Preparing level "world"
+[23:26:11] [Server thread/INFO]: -------- World Settings For [world] --------
+[23:26:11] [Server thread/INFO]: Item Despawn Rate: 6000
+[23:26:11] [Server thread/INFO]: View Distance: 10
+[23:26:11] [Server thread/INFO]: Simulation Distance: 10
+[23:26:11] [Server thread/INFO]: Item Merge Radius: 2.5
+[23:26:11] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[23:26:11] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[23:26:11] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[23:26:11] [Server thread/INFO]: Max TNT Explosions: 100
+[23:26:11] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[23:26:11] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[23:26:11] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Cane Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Melon Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Potato Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Vine Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[23:26:11] [Server thread/INFO]: Mob Spawn Range: 6
+[23:26:11] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[23:26:11] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[23:26:11] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[23:26:11] [Server thread/INFO]: Experience Merge Radius: 3.0
+[23:26:11] [Server thread/INFO]: -------- World Settings For [world_nether] --------
+[23:26:11] [Server thread/INFO]: Item Despawn Rate: 6000
+[23:26:11] [Server thread/INFO]: View Distance: 10
+[23:26:11] [Server thread/INFO]: Simulation Distance: 10
+[23:26:11] [Server thread/INFO]: Item Merge Radius: 2.5
+[23:26:11] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[23:26:11] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[23:26:11] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[23:26:11] [Server thread/INFO]: Max TNT Explosions: 100
+[23:26:11] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[23:26:11] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[23:26:11] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Cane Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Melon Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Potato Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Vine Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[23:26:11] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[23:26:11] [Server thread/INFO]: Mob Spawn Range: 6
+[23:26:11] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[23:26:11] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[23:26:11] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[23:26:11] [Server thread/INFO]: Experience Merge Radius: 3.0
+[23:26:12] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
+[23:26:12] [Server thread/INFO]: Item Despawn Rate: 6000
+[23:26:12] [Server thread/INFO]: View Distance: 10
+[23:26:12] [Server thread/INFO]: Simulation Distance: 10
+[23:26:12] [Server thread/INFO]: Item Merge Radius: 2.5
+[23:26:12] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[23:26:12] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[23:26:12] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[23:26:12] [Server thread/INFO]: Max TNT Explosions: 100
+[23:26:12] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[23:26:12] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[23:26:12] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Cane Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Melon Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Potato Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Vine Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[23:26:12] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[23:26:12] [Server thread/INFO]: Mob Spawn Range: 6
+[23:26:12] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[23:26:12] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[23:26:12] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[23:26:12] [Server thread/INFO]: Experience Merge Radius: 3.0
+[23:26:12] [Server thread/INFO]: Loading 0 persistent chunks...
+[23:26:12] [Server thread/INFO]: Time elapsed: 1 ms
+[23:26:12] [Server thread/INFO]: [GameServer] Enabling GameServer v1.0
+[23:26:12] [Server thread/INFO]: [GameServer] [GameServer] started.
+[23:26:12] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:26:12] [Server thread/INFO]: Done (0.708s)! For help, type "help"
+[23:26:26] [User Authenticator #1/INFO]: UUID of player SouperMan is 53c78e30-6df5-4af5-bee7-a4d7dfa4a290
+[23:26:27] [Server thread/INFO]: SouperMan joined the game
+[23:26:27] [User Authenticator #2/INFO]: UUID of player littlecrafter200 is 9c1916e0-869e-4231-b6bf-e3f356de3ec0
+[23:26:27] [Server thread/INFO]: SouperMan[/127.0.0.1:59558] logged in with entity id 1 at ([world]0.0, 0.0, 0.0)
+[23:26:27] [Server thread/INFO]: littlecrafter200 joined the game
+[23:26:27] [Server thread/INFO]: littlecrafter200[/127.0.0.1:59562] logged in with entity id 2 at ([world]0.0, 0.0, 0.0)
+[23:27:13] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:17] [Server thread/INFO]: littlecrafter200 died
+[23:27:28] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:29] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:34] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:34] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:34] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:35] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:35] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:35] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:35] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:37] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:37] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:37] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:37] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:38] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:320) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:39] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:39] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:39] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:39] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:27:39] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to GameServer v1.0
+org.bukkit.event.EventException: null
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:310) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.fireEvent(SimplePluginManager.java:601) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:588) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:596) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:570) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:556) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at org.bukkit.craftbukkit.v1_21_R6.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:552) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:1893) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:47) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.protocol.game.PacketPlayInBlockPlace.a(PacketPlayInBlockPlace.java:10) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor$a.a(PacketProcessor.java:58) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.network.PacketProcessor.b(PacketProcessor.java:42) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.C(MinecraftServer.java:1125) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:337) ~[spigot-1.21.10-R0.1-SNAPSHOT.jar:4543-Spigot-6e369ba-172ebc6]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at de.souperman.games.countershot.CSWeapon.shoot(CSWeapon.java:463) ~[?:?]
+	at de.souperman.games.countershot.CounterShot.onInteract(CounterShot.java:324) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:306) ~[spigot-api-1.21.10-R0.1-SNAPSHOT.jar:?]
+	... 15 more
+[23:33:00] [Thread-0/INFO]: Stopping server

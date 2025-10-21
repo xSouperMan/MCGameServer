@@ -11,14 +11,14 @@
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/usps_base"
+            "model": "minecraft:item/usps"
           },
           "threshold": 10000001
         },
         {
             "model": {
               "type": "minecraft:model",
-              "model": "minecraft:item/fiveseven_base"
+              "model": "minecraft:item/fiveseven"
             },
             "threshold": 10000002
           }

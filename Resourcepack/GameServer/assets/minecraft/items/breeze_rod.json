@@ -1,0 +1,27 @@
+{
+    "model": {
+      "type": "minecraft:range_dispatch",
+      "property": "minecraft:custom_model_data",
+      "index": 0,
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/breeze_rod"
+      },
+      "entries": [
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/ak47"
+          },
+          "threshold": 10000006
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/awp"
+          },
+          "threshold": 10000008
+        }
+      ]
+    }
+  }

@@ -3,14 +3,13 @@ package de.souperman.games.countershot;
 import de.souperman.games.Game;
 import de.souperman.main.Main;
 import de.souperman.vars.Vars;
-import org.bukkit.Bukkit;
-import org.bukkit.Instrument;
-import org.bukkit.Material;
-import org.bukkit.Note;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityRegainHealthEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -102,6 +101,8 @@ public class CounterShot extends Game implements Listener {
 
             p.getInventory().setItem(4, new ItemStack(Material.PAPER));
             p.getInventory().setHeldItemSlot(4);
+            p.setHealth(20);
+            p.setFoodLevel(20);
 
             if(players.size() >= playersNeeded && !runningCountdown) {
                 counter = countdown;
@@ -425,8 +426,37 @@ public class CounterShot extends Game implements Listener {
 
     @EventHandler
     public void onMove(PlayerMoveEvent e) {
-        if(phase == CSphase.PHASE_BUY) {
-            e.setCancelled(true);
+        if(phase != CSphase.PHASE_BUY) {return;}
+        Location from = e.getFrom();
+        Location to = e.getTo();
+        if (to == null) return;
+
+        //player can look around but not move
+        if (from.getX() != to.getX() || from.getY() != to.getY() || from.getZ() != to.getZ()) {
+            to.setX(from.getX());
+            to.setY(from.getY());
+            to.setZ(from.getZ());
+            e.setTo(to);
+        }
+    }
+
+    @EventHandler
+    public void onHunger(FoodLevelChangeEvent e) {
+        if(e.getEntity() instanceof Player) {
+            Player p = (Player) e.getEntity();
+            if(players.contains(p)) {
+                e.setCancelled(true);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onRegen(EntityRegainHealthEvent e) {
+        if(e.getEntity() instanceof Player) {
+            Player p = (Player) e.getEntity();
+            if(players.contains(p)) {
+                e.setCancelled(true);
+            }
         }
     }
 
