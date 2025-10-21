@@ -13,6 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
@@ -62,7 +63,7 @@ public class CounterShot extends Game implements Listener {
         runningCountdown = false;
         round = 0;
         phaseCounter = 0;
-        phase = CSphase.PHASE_BUY;
+        phase = CSphase.PHASE_LOBBY;
 
         players = new ArrayList<Player>();
         t = new ArrayList<Player>();
@@ -161,20 +162,50 @@ public class CounterShot extends Game implements Listener {
                 switch (phase) {
                     case PHASE_BUY:
                         switch (phaseCounter) {
-                            case 0: // bomb timer runs out
+                            case 20:
+                                sendGameMessage("Buy phase started. Open the shop to buy equipment");
+                                break;
+                            case 5:
+                                sendGameMessage("Buy phase is over in 5 seconds");
+                                break;
+                            case 4:
+                                sendGameMessage("Buy phase is over in 4 seconds");
+                                break;
+                            case 3:
+                                sendGameMessage("Buy phase is over in 3 seconds");
+                                break;
+                            case 2:
+                                sendGameMessage("Buy phase is over in 2 seconds");
+                                break;
+                            case 1:
+                                sendGameMessage("Buy phase is over in 1 seconds");
+                                break;
+                            case 0: // buy phase over -> game phase starts
+                                sendGameMessage("Buy phase ended.");
+                                phase = CSphase.PHASE_GAME;
+                                phaseCounter = roundTime + 1;
                                 break;
                         }
                         break;
                     case PHASE_GAME:
+                        switch (phaseCounter) {
+                            case 0: // game time ended
+                                sendGameMessage("TEST: GAME ENDED TIME");
+                                break;
+                        }
+
                         break;
                     case PHASE_BOMB:
                         break;
                     case PHASE_OVER:
                         break;
+                    case PHASE_END:
+                        break;
                     default:
                         this.cancel();
                         break;
                 }
+                phaseCounter--;
             }
         };
     }
@@ -183,7 +214,7 @@ public class CounterShot extends Game implements Listener {
         this.inProgress = true;
         balanceTeams();
         fillPlayerInventories();
-        phaseCounter = 20;
+        phaseCounter = buyPhaseTime;
         phase = CSphase.PHASE_BUY;
         gameRun.runTaskTimer(Main.getPlugin(), 0, 20);
 
@@ -390,6 +421,13 @@ public class CounterShot extends Game implements Listener {
 
         }
 
+    }
+
+    @EventHandler
+    public void onMove(PlayerMoveEvent e) {
+        if(phase == CSphase.PHASE_BUY) {
+            e.setCancelled(true);
+        }
     }
 
     private static void invInit() {
