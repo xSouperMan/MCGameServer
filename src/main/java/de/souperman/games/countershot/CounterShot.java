@@ -316,8 +316,12 @@ public class CounterShot extends Game implements Listener {
         if(this.inProgress) {
             if((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)) {
 
-                if(p.getItemInHand().getType() == Material.STICK) {
-                    getPlayer(p).getPistol().shoot(p);
+                switch (p.getItemInHand().getType()) {
+                    case STICK:
+                        getPlayer(p).getPistol().shoot(p);
+
+                    case BONE:
+                        getPlayer(p).getKnife().meele(p, CSMeeleType.STRONG);
                 }
 
             } else if(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {

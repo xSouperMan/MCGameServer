@@ -23,7 +23,7 @@ public final class Main extends JavaPlugin {
         plugin = this;
         spawn = plugin.getServer().getWorld("world");
 
-        System.out.println("[GameServer] started.");
+        getLogger().info("[GameServer] started.");
 
         saveDefaultConfig();
 
@@ -45,7 +45,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        System.out.println("[GameServer] stopped.");
+        getLogger().info("[GameServer] stopped.");
     }
 
 

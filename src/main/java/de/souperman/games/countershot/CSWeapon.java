@@ -403,6 +403,13 @@ public class CSWeapon {
         }.runTaskLater(Main.getPlugin(), shootDelay);
     }
 
+    public void meele(Player p, CSMeeleType meeleType) {
+        if(this.weaponClass != CSWeaponClass.KNIFE) {
+            return;
+        }
+
+    }
+
 
     public void reload() {
 
