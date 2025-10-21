@@ -21,6 +21,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CounterShot extends Game implements Listener {
 
@@ -189,73 +190,40 @@ public class CounterShot extends Game implements Listener {
     }
 
     private static void balanceTeams() {
-        int deltaT = t.size() - (int) Math.ceil((double) players.size() /2);
-        int deltaCT = ct.size() - (int) Math.ceil((double) players.size() /2);
-        if(players.size() % 2 == 0) { // teams can be the same size
-
-            if(deltaT > 0) {
-                for(int i = 0; i < deltaT; i++) { // more than half are T's
-                    double rand = Math.random();
-                    int index = (int) (rand * t.size());
-                    ct.add(t.get(index)); // move random t to ct
-                    t.remove(index);
-                }
-            } else if(deltaCT > 0) { // more than half are CT's
-                for(int i = 0; i < deltaCT; i++) {
-                    double rand = Math.random();
-                    int index = (int) (rand * t.size());
-                    t.add(ct.get(index)); // move random ct to t
-                    ct.remove(index);
-                }
-            }
-
-                for(Player p : players) {
-                    if(t.contains(p) || ct.contains(p)) {
-                        continue;
+        if(ct.size() + t.size() == players.size()) {
+            int delta = ct.size() - t.size();
+            if(Math.abs(delta) > 1) { // if too many players in one of the teams
+                if(delta < 0) {
+                    while (Math.abs(ct.size() - t.size()) > 1 || ct.isEmpty() || t.isEmpty()) {
+                        Player rndm = t.remove(ThreadLocalRandom.current().nextInt(t.size()));
+                        ct.add(rndm);
+                        t.remove(rndm);
                     }
-                    if(Math.random() > 0.5 && t.size() < players.size() / 2) {
-                        t.add(p);
-                    } else if(ct.size() < players.size() / 2) {
-                        ct.add(p);
-                    } else {
-                        t.add(p);
-                    }
-                }
-        } else {
-            if(Math.random() > 0.5) {
-                deltaT += 1;
-            } else {
-                deltaCT += 1;
-            }
-            if(deltaT > 0) {
-                for(int i = 0; i < deltaT; i++) { // more than half are T's
-                    double rand = Math.random();
-                    int index = (int) (rand * t.size());
-                    ct.add(t.get(index)); // move random t to ct
-                    t.remove(index);
-                }
-            } else if(deltaCT > 0) { // more than half are CT's
-                for(int i = 0; i < deltaCT; i++) {
-                    double rand = Math.random();
-                    int index = (int) (rand * t.size());
-                    t.add(ct.get(index)); // move random ct to t
-                    ct.remove(index);
-                }
-            }
-
-            for(Player p : players) {
-                if(t.contains(p) || ct.contains(p)) {
-                    continue;
-                }
-                if(Math.random() > 0.5 && t.size() < players.size() / 2) {
-                    t.add(p);
-                } else if(ct.size() < players.size() / 2) {
-                    ct.add(p);
                 } else {
-                    t.add(p);
+                    while (Math.abs(ct.size() - t.size()) > 1 || ct.isEmpty() || t.isEmpty()) {
+                        Player rndm = ct.remove(ThreadLocalRandom.current().nextInt(t.size()));
+                        t.add(rndm);
+                        ct.remove(rndm);
+                    }
                 }
             }
+        } else {
+            for(Player p : players) {
+                if(ct.contains(p) || t.contains(p)) { continue; }
 
+                if(ct.size() - t.size() < 0) {
+                    ct.add(p);
+                } else if(ct.size() - t.size() > 0) {
+                    t.add(p);
+                } else {
+                    Random random = new Random();
+                    if(random.nextFloat() < 0.5) {
+                        t.add(p);
+                    } else {
+                        ct.add(p);
+                    }
+                }
+            }
         }
     }
 
@@ -271,11 +239,11 @@ public class CounterShot extends Game implements Listener {
             CSplayers.add(player);
 
             Inventory inv = p.getInventory();
-            ItemStack glock = new ItemStack(Material.STICK);
             ItemStack shop = new ItemStack(Material.EMERALD);
 
             inv.setItem(0, player.getKnifeItem());
             inv.setItem(1, player.getPistolItem());
+            inv.setItem(2, player.getSecondaryItem());
             inv.setItem(8, shop);
 
         }
@@ -290,7 +258,6 @@ public class CounterShot extends Game implements Listener {
             CSplayers.add(player);
 
             Inventory inv = p.getInventory();
-            ItemStack usps = new ItemStack(Material.STICK);
             ItemStack shop = new ItemStack(Material.EMERALD);
 
             inv.setItem(0, player.getKnifeItem());
@@ -318,10 +285,17 @@ public class CounterShot extends Game implements Listener {
 
                 switch (p.getItemInHand().getType()) {
                     case STICK:
-                        getPlayer(p).getPistol().shoot(p);
+                        getPlayer(p).getPistol().shoot(getPlayer(p), CSplayers);
+                        break;
+
+                    case BREEZE_ROD:
+                        getPlayer(p).getSecondary().shoot(getPlayer(p), CSplayers);
+                        break;
 
                     case BONE:
                         getPlayer(p).getKnife().meele(p, CSMeeleType.STRONG);
+                        break;
+
                 }
 
             } else if(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {

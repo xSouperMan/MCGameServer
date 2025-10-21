@@ -8,38 +8,41 @@ import java.util.ArrayList;
 public class CSPlayer {
 
     private Player player;
-    private int health;
+    private double health;
     private int money;
     private CSWeapon knife;
     private CSWeapon pistol;
     private CSWeapon secondary;
     private CSteam team;
     private ArrayList<CSGrenade> grenades;
+    private boolean isAlive;
 
     public CSPlayer(Player player, CSteam team) {
         this.team = team;
         this.player = player;
+        this.health = 100;
         this.money = 800;
         this.grenades = new ArrayList<CSGrenade>();
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
         this.knife = new CSWeapon(CSWeaponType.KNIFE);
+        this.isAlive = true;
         if(team == CSteam.TERRORIST) {
             this.pistol = new CSWeapon(CSWeaponType.GLOCK);
         } else {
             this.pistol = new CSWeapon(CSWeaponType.USPS);
         }
-        this.secondary = new CSWeapon(CSWeaponType.NONE);
+        this.secondary = new CSWeapon(CSWeaponType.AWP);
     }
 
     public CSteam getTeam() {
         return this.team;
     }
 
-    public void setPistol(CSWeapon pistol) {
+    public void setPistol(CSWeapon pistol) { this.pistol = pistol; }
 
-    }
+    public void setAlive(boolean b) { this.isAlive = b; }
 
     public CSWeapon getKnife() {
         return knife;
@@ -69,12 +72,23 @@ public class CSPlayer {
         return player;
     }
 
-    public void damage(int damage, CSPlayer damager) {
+    public boolean isAlive() { return isAlive; }
+
+    public void damage(double damage, CSPlayer damager) {
         if(damage >= health) {
             this.health = 0;
-            //TODO: player dies
+            this.killedBy(damager);
+            this.player.damage(0);
+            this.player.setHealth(0);
+
         } else {
-            health -= damage;
+            this.health -= damage;
+            this.player.damage(0);
+            this.player.setHealth(Math.ceil(this.health/100.0 * 20.0));
         }
+    }
+    private void killedBy(CSPlayer damager) {
+        this.setAlive(false);
+
     }
 }
