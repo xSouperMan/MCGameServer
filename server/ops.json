@@ -1,5 +1,11 @@
 [
   {
+    "uuid": "9c1916e0-869e-4231-b6bf-e3f356de3ec0",
+    "name": "littlecrafter200",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
     "uuid": "53c78e30-6df5-4af5-bee7-a4d7dfa4a290",
     "name": "SouperMan",
     "level": 4,
