@@ -29,7 +29,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CounterShot extends Game implements Listener {
 
     private static final int size = 10;
-    private static final int playersNeeded = 2;
+    private static final int playersNeeded = 1;
     private static final int countdown = 5;
     private static int counter;
     private static boolean runningCountdown;
@@ -244,6 +244,12 @@ public class CounterShot extends Game implements Listener {
         fillPlayerInventories();
         phaseCounter = buyPhaseTime;
         switchPhase(CSphase.PHASE_BUY);
+        round = 1;
+
+        for(CSPlayer player : CSplayers) {
+            player.getPlayer().setPlayerListName(player.getStats().getStatsPrefix() + player.getPlayer().getDisplayName());
+        }
+
         gameRun.runTaskTimer(Main.getPlugin(), 0, 20);
 
     }
@@ -291,7 +297,7 @@ public class CounterShot extends Game implements Listener {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
             p.sendMessage(Vars.PRFX_SCS+"You start as a §4Terrorist§f!");
-            p.setDisplayName("§4"+p.getName());
+            p.setDisplayName("§4"+p.getName()+ "§f");
             p.getInventory().clear();
 
             CSPlayer player = new CSPlayer(p, CSteam.TERRORIST);
@@ -310,7 +316,7 @@ public class CounterShot extends Game implements Listener {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
             p.teleport(Vars.CSLOBBY_SPAWN);
             p.sendMessage(Vars.PRFX_SCS+"You start as a §1Counter-Terrorist§f!");
-            p.setDisplayName("§1"+p.getName());
+            p.setDisplayName("§1"+p.getName() + "§f");
             p.getInventory().clear();
 
             CSPlayer player = new CSPlayer(p, CSteam.COUNTER_TERRORIST);
@@ -567,11 +573,18 @@ public class CounterShot extends Game implements Listener {
 
         // SHOPS INVENTORY ------------------------
 
-        shopCT = Bukkit.createInventory(null, 36);
-        shopT = Bukkit.createInventory(null, 36);
+        shopCT = Bukkit.createInventory(null, 54);
+        shopT = Bukkit.createInventory(null, 54);
 
         //items for both teams
         ItemStack grenade = new ItemStack(Material.AIR); //TODO...
+
+
+        //items for cts
+        ItemStack usps = new ItemStack(CSWeaponType.USPS.)
+
+
+        //items for ts
 
     }
 

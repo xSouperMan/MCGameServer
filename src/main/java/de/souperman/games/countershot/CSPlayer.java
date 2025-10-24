@@ -16,6 +16,7 @@ public class CSPlayer {
     private CSteam team;
     private ArrayList<CSGrenade> grenades;
     private boolean isAlive;
+    private CSStats stats;
 
     public CSPlayer(Player player, CSteam team) {
         this.team = team;
@@ -28,6 +29,8 @@ public class CSPlayer {
         this.grenades.add(new CSGrenade(CSGrenadeType.NONE));
         this.knife = new CSWeapon(CSWeaponType.KNIFE);
         this.isAlive = true;
+        this.stats = new CSStats();
+
         if(team == CSteam.TERRORIST) {
             this.pistol = new CSWeapon(CSWeaponType.GLOCK);
         } else {
@@ -96,8 +99,12 @@ public class CSPlayer {
             this.player.setHealth(Math.ceil(this.health/100.0 * 20.0));
         }
     }
-    private void killedBy(CSPlayer damager) {
+    public void killedBy(CSPlayer damager) {
         this.setAlive(false);
 
+    }
+
+    public CSStats getStats() {
+        return this.stats;
     }
 }

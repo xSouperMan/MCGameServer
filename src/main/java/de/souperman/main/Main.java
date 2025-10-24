@@ -2,6 +2,7 @@ package de.souperman.main;
 
 import de.souperman.commands.CMDjoin;
 import de.souperman.commands.CMDsetspawn;
+import de.souperman.games.countershot.CSVar;
 import de.souperman.games.countershot.CounterShot;
 import de.souperman.listeners.EVENTjoin;
 import de.souperman.listeners.EVENTleave;
@@ -27,6 +28,8 @@ public final class Main extends JavaPlugin {
         getLogger().info("[GameServer] started.");
 
         saveDefaultConfig();
+
+        CSVar.initCSVars();
 
         spawn.setStorm(false);
         spawn.setThundering(false);
