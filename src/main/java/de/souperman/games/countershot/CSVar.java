@@ -41,151 +41,159 @@ public class CSVar {
         tec9_item = new ItemStack(Material.STICK);
         deagle_item = new ItemStack(Material.STICK);
         p250_item = new ItemStack(Material.STICK);
-        usps_item = new ItemStack(Material.BLAZE_ROD);
+        mp9_item = new ItemStack(Material.BLAZE_ROD);
+        mac10_item = new ItemStack(Material.BLAZE_ROD);
+        nova_item = new ItemStack(Material.BLAZE_ROD);
+        xm1015_item = new ItemStack(Material.BLAZE_ROD);
+        p90_item = new ItemStack(Material.BLAZE_ROD);
+        galil_item = new ItemStack(Material.BREEZE_ROD);
+        famas_item = new ItemStack(Material.BREEZE_ROD);
+        aug_item = new ItemStack(Material.BREEZE_ROD);
+        sg553_item = new ItemStack(Material.BREEZE_ROD);
+        m4a4_item = new ItemStack(Material.BREEZE_ROD);
+        ak47_item = new ItemStack(Material.BREEZE_ROD);
+        ssg08_item = new ItemStack(Material.BREEZE_ROD);
+        awp_item = new ItemStack(Material.BREEZE_ROD);
+        knife_item = new ItemStack(Material.BONE);
+        none_item = new ItemStack(Material.AIR);
 
-        ItemStack weapon = new ItemStack(Material.AIR);
-        ItemMeta weaponMeta = weapon.getItemMeta();
-        switch (type) {
-            case USPS:
-                weapon.setType(Material.STICK);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("USPS");
-                weaponMeta.setCustomModelData(10000001);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case FIVESEVEN:
-                weapon.setType(Material.STICK);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Five-SeveN");
-                weaponMeta.setCustomModelData(10000002);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case GLOCK:
-                weapon.setType(Material.STICK);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Glock-18");
-                weaponMeta.setCustomModelData(10000003);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case TEC9:
-                weapon.setType(Material.STICK);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Tec-9");
-                weaponMeta.setCustomModelData(10000004);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case DEAGLE:
-                weapon.setType(Material.STICK);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Desert Eagle");
-                weaponMeta.setCustomModelData(10000005);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case P250:
-                weapon.setType(Material.STICK);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("P250");
-                weaponMeta.setCustomModelData(10000006);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case MP9:
-                weapon.setType(Material.BLAZE_ROD);
-                break;
-            case MAC10:
-                weapon.setType(Material.BLAZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Mac-10");
-                weaponMeta.setCustomModelData(10000001);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case NOVA:
-                weapon.setType(Material.BLAZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Nova");
-                weaponMeta.setCustomModelData(10000002);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case XM1015:
-                weapon.setType(Material.BLAZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Xm1015");
-                weaponMeta.setCustomModelData(10000003);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case P90:
-                weapon.setType(Material.BLAZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("P90");
-                weaponMeta.setCustomModelData(10000004);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case GALIL:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Galil AR");
-                weaponMeta.setCustomModelData(10000001);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case FAMAS:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Famas");
-                weaponMeta.setCustomModelData(10000002);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case AUG:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("AUG");
-                weaponMeta.setCustomModelData(10000003);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case SG553:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("SG553");
-                weaponMeta.setCustomModelData(10000004);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case M4A4:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("M4A4");
-                weaponMeta.setCustomModelData(10000005);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case AK47:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("AK-47");
-                weaponMeta.setCustomModelData(10000006);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case SSG08:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("SSG08");
-                weaponMeta.setCustomModelData(10000007);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case AWP:
-                weapon.setType(Material.BREEZE_ROD);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("AWP");
-                weaponMeta.setCustomModelData(10000008);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            case KNIFE:
-                weapon.setType(Material.BONE);
-                weaponMeta = weapon.getItemMeta();
-                weaponMeta.setDisplayName("Knife");
-                weaponMeta.setCustomModelData(10000001);
-                weapon.setItemMeta(weaponMeta);
-                break;
-            default:
-                weapon.setType(Material.AIR);
-                break;
-        }
+        ItemMeta uspsItemItemMeta = usps_item.getItemMeta();
+        uspsItemItemMeta.setDisplayName("USPS");
+        uspsItemItemMeta.setCustomModelData(10000001);
+        usps_item.setItemMeta(uspsItemItemMeta);
+
+        fiveseven_item.setType(Material.STICK);
+        ItemMeta fivesevenItemItemMeta = fiveseven_item.getItemMeta();
+        fivesevenItemItemMeta.setDisplayName("Five-SeveN");
+        fivesevenItemItemMeta.setCustomModelData(10000002);
+        fiveseven_item.setItemMeta(fivesevenItemItemMeta);
+
+
+        glock_item.setType(Material.STICK);
+        ItemMeta glockItemItemItemMeta = glock_item.getItemMeta();
+        glockItemItemItemMeta.setDisplayName("Glock-18");
+        glockItemItemItemMeta.setCustomModelData(10000003);
+        glock_item.setItemMeta(glockItemItemItemMeta);
+
+
+        tec9_item.setType(Material.STICK);
+        ItemMeta tec9ItemItemMeta = tec9_item.getItemMeta();
+        tec9ItemItemMeta.setDisplayName("Tec-9");
+        tec9ItemItemMeta.setCustomModelData(10000004);
+        tec9_item.setItemMeta(tec9ItemItemMeta);
+
+
+        deagle_item.setType(Material.STICK);
+        ItemMeta deagleItemItemMeta = deagle_item.getItemMeta();
+        deagleItemItemMeta.setDisplayName("Desert Eagle");
+        deagleItemItemMeta.setCustomModelData(10000005);
+        deagle_item.setItemMeta(deagleItemItemMeta);
+
+
+        p250_item.setType(Material.STICK);
+        ItemMeta p250ItemItemMeta = p250_item.getItemMeta();
+        p250ItemItemMeta.setDisplayName("P250");
+        p250ItemItemMeta.setCustomModelData(10000006);
+        p250_item.setItemMeta(p250ItemItemMeta);
+
+
+        mp9_item.setType(Material.BLAZE_ROD);
+        ItemMeta mp9ItemItemMeta = mp9_item.getItemMeta();
+        mp9ItemItemMeta.setDisplayName("Mp9");
+        mp9ItemItemMeta.setCustomModelData(10000007);
+        mp9_item.setItemMeta(mp9ItemItemMeta);
+
+
+        mac10_item.setType(Material.BLAZE_ROD);
+        ItemMeta mac10ItemItemMeta = mac10_item.getItemMeta();
+        mac10ItemItemMeta.setDisplayName("Mac-10");
+        mac10ItemItemMeta.setCustomModelData(10000008);
+        mac10_item.setItemMeta(mac10ItemItemMeta);
+
+
+        nova_item.setType(Material.BLAZE_ROD);
+        ItemMeta novaItemItemMeta = nova_item.getItemMeta();
+        novaItemItemMeta.setDisplayName("Nova");
+        novaItemItemMeta.setCustomModelData(10000009);
+        nova_item.setItemMeta(novaItemItemMeta);
+
+
+        xm1015_item.setType(Material.BLAZE_ROD);
+        ItemMeta xm1015ItemItemMeta = xm1015_item.getItemMeta();
+        xm1015ItemItemMeta.setDisplayName("Xm1015");
+        xm1015ItemItemMeta.setCustomModelData(10000010);
+        xm1015_item.setItemMeta(xm1015ItemItemMeta);
+
+
+        p90_item.setType(Material.BLAZE_ROD);
+        ItemMeta p90ItemItemMeta = p90_item.getItemMeta();
+        p90ItemItemMeta.setDisplayName("P90");
+        p90ItemItemMeta.setCustomModelData(10000011);
+        p90_item.setItemMeta(p90ItemItemMeta);
+
+
+        galil_item.setType(Material.BREEZE_ROD);
+        ItemMeta galilItemItemMeta = galil_item.getItemMeta();
+        galilItemItemMeta.setDisplayName("Galil AR");
+        galilItemItemMeta.setCustomModelData(10000012);
+        galil_item.setItemMeta(galilItemItemMeta);
+
+
+        famas_item.setType(Material.BREEZE_ROD);
+        ItemMeta famasItemItemMeta = famas_item.getItemMeta();
+        famasItemItemMeta.setDisplayName("Famas");
+        famasItemItemMeta.setCustomModelData(10000013);
+        famas_item.setItemMeta(famasItemItemMeta);
+
+
+        aug_item.setType(Material.BREEZE_ROD);
+        ItemMeta augItemItemMeta = aug_item.getItemMeta();
+        augItemItemMeta.setDisplayName("AUG");
+        augItemItemMeta.setCustomModelData(10000014);
+        aug_item.setItemMeta(augItemItemMeta);
+
+
+        sg553_item.setType(Material.BREEZE_ROD);
+        ItemMeta sg553ItemItemMeta = sg553_item.getItemMeta();
+        sg553ItemItemMeta.setDisplayName("SG553");
+        sg553ItemItemMeta.setCustomModelData(10000015);
+        sg553_item.setItemMeta(sg553ItemItemMeta);
+
+
+        m4a4_item.setType(Material.BREEZE_ROD);
+        ItemMeta m4a4ItemItemMeta = m4a4_item.getItemMeta();
+        m4a4ItemItemMeta.setDisplayName("M4A4");
+        m4a4ItemItemMeta.setCustomModelData(10000016);
+        m4a4_item.setItemMeta(m4a4ItemItemMeta);
+
+
+        ak47_item.setType(Material.BREEZE_ROD);
+        ItemMeta ak47ItemItemMeta = ak47_item.getItemMeta();
+        ak47ItemItemMeta.setDisplayName("AK-47");
+        ak47ItemItemMeta.setCustomModelData(10000017);
+        ak47_item.setItemMeta(ak47ItemItemMeta);
+
+
+        ssg08_item.setType(Material.BREEZE_ROD);
+        ItemMeta ssg08ItemItemMeta = ssg08_item.getItemMeta();
+        ssg08ItemItemMeta.setDisplayName("SSG08");
+        ssg08ItemItemMeta.setCustomModelData(10000018);
+        ssg08_item.setItemMeta(ssg08ItemItemMeta);
+
+
+        awp_item.setType(Material.BREEZE_ROD);
+        ItemMeta awpItemItemMeta = awp_item.getItemMeta();
+        awpItemItemMeta.setDisplayName("AWP");
+        awpItemItemMeta.setCustomModelData(10000019);
+        awp_item.setItemMeta(awpItemItemMeta);
+
+
+        knife_item.setType(Material.BONE);
+        ItemMeta knifeItemItemMeta = knife_item.getItemMeta();
+        knifeItemItemMeta.setDisplayName("Knife");
+        knifeItemItemMeta.setCustomModelData(10000020);
+        knife_item.setItemMeta(knifeItemItemMeta);
+
     }
 
 }

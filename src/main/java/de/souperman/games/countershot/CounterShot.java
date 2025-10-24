@@ -578,10 +578,13 @@ public class CounterShot extends Game implements Listener {
 
         //items for both teams
         ItemStack grenade = new ItemStack(Material.AIR); //TODO...
+        ItemStack deagle = CSWeaponType.DEAGLE.getItem();
+        ItemStack p250 = CSWeaponType.P250.getItem();
 
 
         //items for cts
-        ItemStack usps = new ItemStack(CSWeaponType.USPS.)
+        ItemStack usps = CSWeaponType.USPS.getItem();
+        ItemStack fiveseven = CSWeaponType.FIVESEVEN.getItem();
 
 
         //items for ts
