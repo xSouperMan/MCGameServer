@@ -567,10 +567,10 @@ public class CounterShot extends Game implements Listener {
 
         // SHOPS INVENTORY ------------------------
 
-        shopCT = Bukkit.createInventory(null, 37);
-        shopT = Bukkit.createInventory(null, 37);
+        shopCT = Bukkit.createInventory(null, 36);
+        shopT = Bukkit.createInventory(null, 36);
 
-        //items for both teams:
+        //items for both teams
         ItemStack grenade = new ItemStack(Material.AIR); //TODO...
 
     }
