@@ -99,7 +99,7 @@ public class CSVar {
 
         mp9_item.setType(Material.BLAZE_ROD);
         ItemMeta mp9ItemItemMeta = mp9_item.getItemMeta();
-        mp9ItemItemMeta.setDisplayName("Mp9");
+        mp9ItemItemMeta.setDisplayName("MP9");
         mp9ItemItemMeta.setCustomModelData(10000007);
         mp9_item.setItemMeta(mp9ItemItemMeta);
 

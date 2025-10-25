@@ -36,11 +36,11 @@ public class CSWeapon {
         );
     }
 
-    private ArrayList<ShotHit> calculatePlayersHitByShot(CSPlayer player, ArrayList<CSPlayer> players, Location start, Vector direction, double distance) {
+    private ArrayList<CSShotHit> calculatePlayersHitByShot(CSPlayer player, ArrayList<CSPlayer> players, Location start, Vector direction, double distance) {
         Vector o = start.toVector();
         Vector d = direction.clone();
         double len = d.length();
-        ArrayList<ShotHit> hits = new ArrayList<>();
+        ArrayList<CSShotHit> hits = new ArrayList<>();
         if (len == 0.0) return hits;
         d.multiply(1.0 / len);
 
@@ -53,13 +53,13 @@ public class CSWeapon {
 
             Double tHead = rayAabbHitT(o, d, head, distance);
             if (tHead != null && tHead >= 0.0 && tHead <= distance) {
-                hits.add(new ShotHit(p, tHead, true));
+                hits.add(new CSShotHit(p, tHead, true));
                 continue;
             }
 
             Double tBody = rayAabbHitT(o, d, body, distance);
             if (tBody != null && tBody >= 0.0 && tBody <= distance) {
-                hits.add(new ShotHit(p, tBody, false));
+                hits.add(new CSShotHit(p, tBody, false));
             }
         }
         return hits;
@@ -131,13 +131,13 @@ public class CSWeapon {
             int count = Math.max(1, this.type.getDamage() / 2);
             player.getWorld().spawnParticle(Particle.BLOCK, hitLoc, count, 0.35, 0.35, 0.35, 0.12, data);
         }
-        ArrayList<ShotHit> hits = calculatePlayersHitByShot(csplayer, players, start, direction, drawDist);
+        ArrayList<CSShotHit> hits = calculatePlayersHitByShot(csplayer, players, start, direction, drawDist);
         hits.sort((a, b) -> Double.compare(a.t, b.t));
 
         double baseDamage = this.type.getDamage();
         double minFactor = 0.15;
         for (int i = 0; i < hits.size(); i++) {
-            ShotHit h = hits.get(i);
+            CSShotHit h = hits.get(i);
             CSPlayer victim = h.target;
             double rankFactor = Math.max(minFactor, Math.pow(0.8, i));
             double hsFactor = h.headshot ? this.type.getHsMultiply() : 1.0;

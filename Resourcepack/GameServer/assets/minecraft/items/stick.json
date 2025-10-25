@@ -21,7 +21,35 @@
               "model": "minecraft:item/fiveseven"
             },
             "threshold": 10000002
-          }
+        },
+        {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/glock"
+            },
+            "threshold": 10000003
+        },
+        {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/tec9"
+            },
+            "threshold": 10000004
+        },
+        {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/deagle"
+            },
+            "threshold": 10000005
+        },
+        {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/p250"
+            },
+            "threshold": 10000006
+        }
       ]
     }
   }

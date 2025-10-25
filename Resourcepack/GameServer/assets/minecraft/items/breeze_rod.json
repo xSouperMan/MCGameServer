@@ -11,16 +11,58 @@
         {
           "model": {
             "type": "minecraft:model",
+            "model": "minecraft:item/galil"
+          },
+          "threshold": 10000012
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/famas"
+          },
+          "threshold": 10000013
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/aug"
+          },
+          "threshold": 10000014
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/sg553"
+          },
+          "threshold": 10000015
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/m4a4"
+          },
+          "threshold": 10000016
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
             "model": "minecraft:item/ak47"
           },
-          "threshold": 10000006
+          "threshold": 10000017
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/ssg08"
+          },
+          "threshold": 10000018
         },
         {
           "model": {
             "type": "minecraft:model",
             "model": "minecraft:item/awp"
           },
-          "threshold": 10000008
+          "threshold": 10000019
         }
       ]
     }

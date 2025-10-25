@@ -5,9 +5,9 @@ import org.bukkit.inventory.ItemStack;
 public enum CSWeaponType {
     USPS(CSVar.usps_item , CSWeaponClass.PISTOL, 24, 12, 43, 4, 300, 35, 0.575f, 4f, 200),       // CT
     FIVESEVEN(CSVar.fiveseven_item,CSWeaponClass.PISTOL, 0, 0, 45, 0, 0, 0, 0f, 0f, 0),          // CT
-    GLOCK(CSVar.glock_item,CSWeaponClass.PISTOL, 0, 0, 45, 0, 0, 30, 0f, 0f, 0),                 // T
+    GLOCK(CSVar.glock_item,CSWeaponClass.PISTOL, 120, 20, 45, 0, 0, 30, 0f, 0f, 0),                 // T
     TEC9(CSVar.tec9_item,CSWeaponClass.PISTOL, 0, 0, 51, 0, 0, 0, 0f, 0f, 0),                    // T
-    DEAGLE(CSVar.glock_item,CSWeaponClass.PISTOL, 0, 0, 44, 0, 0, 0, 0f, 0f, 0),                 // BOTH
+    DEAGLE(CSVar.deagle_item,CSWeaponClass.PISTOL, 0, 0, 44, 0, 0, 0, 0f, 0f, 0),                 // BOTH
     P250(CSVar.p250_item, CSWeaponClass.SECONDARY, 0, 0, 45, 0, 0, 0, 0f, 0f, 0),                // BOTH
     MP9(CSVar.mp9_item, CSWeaponClass.SECONDARY, 0, 0, 43, 0, 0, 0, 0f, 0f, 0),                  // CT
     MAC10(CSVar.mac10_item, CSWeaponClass.SECONDARY, 0, 0, 51, 0, 0, 0, 0f, 0f, 0),              // T
@@ -21,7 +21,7 @@ public enum CSWeaponType {
     M4A4(CSVar.m4a4_item, CSWeaponClass.SECONDARY, 0, 0, 61, 0, 0, 0, 0f, 0f, 0),                // CT
     AK47(CSVar.ak47_item, CSWeaponClass.SECONDARY, 0, 0, 49, 0, 0, 0, 0f, 0f, 0),                // T
     SSG08(CSVar.ssg08_item, CSWeaponClass.SECONDARY, 0, 0, 74, 0, 0, 0, 0f, 0f, 0),              // BOTH
-    AWP(CSVar.awp_item, CSWeaponClass.SECONDARY, 7, 1, 73, 29, 100, 115, 97.5f, 4f, 4750),       // BOTH
+    AWP(CSVar.awp_item, CSWeaponClass.SECONDARY, 30, 5, 73, 29, 100, 115, 97.5f, 4f, 4750),       // BOTH
     KNIFE(CSVar.knife_item, CSWeaponClass.KNIFE, 0, 0, 0, 0, 0, 0, 0f, 0f, 0),                   // -
     NONE(CSVar.none_item, CSWeaponClass.NONE, 0, 0, 0, 0, 0, 0, 0f, 0f, 0);                      // -
 

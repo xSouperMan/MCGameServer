@@ -1,0 +1,48 @@
+{
+    "model": {
+      "type": "minecraft:range_dispatch",
+      "property": "minecraft:custom_model_data",
+      "index": 0,
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/blaze_rod"
+      },
+      "entries": [
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/ak47"
+          },
+          "threshold": 10000007
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/awp"
+          },
+          "threshold": 10000008
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/awp"
+          },
+          "threshold": 10000009
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/awp"
+          },
+          "threshold": 10000010
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/awp"
+          },
+          "threshold": 10000011
+        }
+      ]
+    }
+  }

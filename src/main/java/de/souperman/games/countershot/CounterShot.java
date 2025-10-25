@@ -23,6 +23,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -577,17 +578,95 @@ public class CounterShot extends Game implements Listener {
         shopT = Bukkit.createInventory(null, 54);
 
         //items for both teams
-        ItemStack grenade = new ItemStack(Material.AIR); //TODO...
         ItemStack deagle = CSWeaponType.DEAGLE.getItem();
         ItemStack p250 = CSWeaponType.P250.getItem();
+        ItemStack nova = CSWeaponType.NOVA.getItem();
+        ItemStack xm1015 = CSWeaponType.XM1015.getItem();
+        ItemStack p90 = CSWeaponType.P90.getItem();
+        ItemStack ssg08 = CSWeaponType.SSG08.getItem();
+        ItemStack awp = CSWeaponType.AWP.getItem();
+
+        ItemMeta deagleMeta = deagle.getItemMeta();
+        List<String> deagleLore = new ArrayList<>();
+        deagleLore.add("§7Price: §a"+CSWeaponType.DEAGLE.getCost());
+        deagleLore.add("§7- A lethal headshot at any range");
+        deagleLore.add("§7- Consider in eco rounds");
+        deagleLore.add("§7- Difficulty: §c☆☆☆☆");
+        deagleMeta.setLore(deagleLore);
+        deagle.setItemMeta(deagleMeta);
+
+        ItemMeta p250Meta = p250.getItemMeta();
+        List<String> p250Lore = new ArrayList<>();
+        p250Lore.add("§7Price: §a"+CSWeaponType.P250.getCost());
+        p250Lore.add("§7- A popular, if modest, damage upgrade");
+        p250Lore.add("§7- Consider in eco rounds");
+        p250Lore.add("§7- Difficulty: §a☆");
+        p250Meta.setLore(p250Lore);
+        p250.setItemMeta(deagleMeta);
+
+        ItemMeta novaMeta = p250.getItemMeta();
+        List<String> novaLore = new ArrayList<>();
+        novaLore.add("§7Price: §a"+CSWeaponType.NOVA.getCost());
+        novaLore.add("§7- A popular, if modest, damage upgrade");
+        novaLore.add("§7- Consider in eco rounds");
+        novaLore.add("§7- Difficulty: §a☆");
+        novaMeta.setLore(p250Lore);
+        nova.setItemMeta(novaMeta);
 
 
         //items for cts
         ItemStack usps = CSWeaponType.USPS.getItem();
         ItemStack fiveseven = CSWeaponType.FIVESEVEN.getItem();
+        ItemStack mp9 = CSWeaponType.MP9.getItem();
+        ItemStack famas = CSWeaponType.FAMAS.getItem();
+        ItemStack aug = CSWeaponType.AUG.getItem();
+        ItemStack m4a4 = CSWeaponType.M4A4.getItem();
 
 
         //items for ts
+        ItemStack glock = CSWeaponType.GLOCK.getItem();
+        ItemStack tec9 = CSWeaponType.TEC9.getItem();
+        ItemStack mac10 = CSWeaponType.MAC10.getItem();
+        ItemStack galil = CSWeaponType.GALIL.getItem();
+        ItemStack ak47 = CSWeaponType.AK47.getItem();
+        ItemStack sg553 = CSWeaponType.SG553.getItem();
+
+
+
+        //fill invs:
+
+        shopCT.setItem(18, usps);
+        shopCT.setItem(27, p250);
+        shopCT.setItem(36, fiveseven);
+        shopCT.setItem(45, deagle);
+
+        shopCT.setItem(20, nova);
+        shopCT.setItem(29, xm1015);
+        shopCT.setItem(38, p90);
+        shopCT.setItem(47, mp9);
+
+        shopCT.setItem(22, famas);
+        shopCT.setItem(23, m4a4);
+        shopCT.setItem(31, ssg08);
+        shopCT.setItem(40, aug);
+        shopCT.setItem(49, awp);
+
+
+        shopT.setItem(18, glock);
+        shopT.setItem(27, p250);
+        shopT.setItem(36, tec9);
+        shopT.setItem(45, deagle);
+
+        shopT.setItem(20, nova);
+        shopT.setItem(29, xm1015);
+        shopT.setItem(38, p90);
+        shopT.setItem(47, mac10);
+
+        shopT.setItem(22, galil);
+        shopT.setItem(23, ak47);
+        shopT.setItem(31, ssg08);
+        shopT.setItem(40, sg553);
+        shopT.setItem(49, awp);
 
     }
 
