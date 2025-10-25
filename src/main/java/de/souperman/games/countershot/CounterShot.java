@@ -17,7 +17,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -619,11 +618,47 @@ public class CounterShot extends Game implements Listener {
         ItemMeta novaMeta = nova.getItemMeta();
         List<String> novaLore = new ArrayList<>();
         novaLore.add("§7Price: §a"+CSWeaponType.NOVA.getCost());
-        novaLore.add("§7- A popular, if modest, damage upgrade");
-        novaLore.add("§7- Consider in eco rounds");
-        novaLore.add("§7- Difficulty: §a☆");
+        novaLore.add("§7- Versatile shotgun for close quarter combat");
+        novaLore.add("§7- Consider in force buy rounds");
+        novaLore.add("§7- Difficulty: §e☆☆");
         novaMeta.setLore(novaLore);
         nova.setItemMeta(novaMeta);
+
+        ItemMeta xm1015Meta = xm1015.getItemMeta();
+        List<String> xm1015Lore = new ArrayList<>();
+        xm1015Lore.add("§7Price: §a"+CSWeaponType.XM1015.getCost());
+        xm1015Lore.add("§7- A full-auto rapid-fire monster");
+        xm1015Lore.add("§7- Consider in force buy rounds");
+        xm1015Lore.add("§7- Difficulty: §a☆");
+        xm1015Meta.setLore(xm1015Lore);
+        xm1015.setItemMeta(xm1015Meta);
+
+        ItemMeta p90Meta = p90.getItemMeta();
+        List<String> p90Lore = new ArrayList<>();
+        p90Lore.add("§7Price: §a"+CSWeaponType.P90.getCost());
+        p90Lore.add("§7- An endless bullet hose bested only by rifles");
+        p90Lore.add("§7- Consider in full buy rounds");
+        p90Lore.add("§7- Difficulty: §a☆");
+        p90Meta.setLore(p90Lore);
+        p90.setItemMeta(p90Meta);
+
+        ItemMeta ssg08Meta = ssg08.getItemMeta();
+        List<String> ssg08Lore = new ArrayList<>();
+        ssg08Lore.add("§7Price: §a"+CSWeaponType.SSG08.getCost());
+        ssg08Lore.add("§7- Light and powerful long-distance damage dealer");
+        ssg08Lore.add("§7- Consider in force buy rounds");
+        ssg08Lore.add("§7- Difficulty: §c☆☆☆☆");
+        ssg08Meta.setLore(ssg08Lore);
+        ssg08.setItemMeta(ssg08Meta);
+
+        ItemMeta awpMeta = awp.getItemMeta();
+        List<String> awpLore = new ArrayList<>();
+        awpLore.add("§7Price: §a"+CSWeaponType.AWP.getCost());
+        awpLore.add("§7- Devastating power for the confident sniper");
+        awpLore.add("§7- Consider in full buy rounds");
+        awpLore.add("§7- Difficulty: §6☆☆☆");
+        awpMeta.setLore(awpLore);
+        awp.setItemMeta(awpMeta);
 
 
         //items for cts
@@ -634,6 +669,60 @@ public class CounterShot extends Game implements Listener {
         ItemStack aug = CSWeaponType.AUG.getItem();
         ItemStack m4a4 = CSWeaponType.M4A4.getItem();
 
+        ItemMeta uspsMeta = usps.getItemMeta();
+        List<String> uspsLore = new ArrayList<>();
+        uspsLore.add("§7Price: §a"+CSWeaponType.USPS.getCost());
+        uspsLore.add("§7- Precise, silent, and (somewhat) deadly");
+        uspsLore.add("§7- Consider in the first round of the half");
+        uspsLore.add("§7- Difficulty: §e☆☆");
+        uspsMeta.setLore(uspsLore);
+        usps.setItemMeta(uspsMeta);
+
+        ItemMeta fivesevenMeta = fiveseven.getItemMeta();
+        List<String> fivesevenLore = new ArrayList<>();
+        fivesevenLore.add("§7Price: §a"+CSWeaponType.FIVESEVEN.getCost());
+        fivesevenLore.add("§7- Power, speed and precision for a price");
+        fivesevenLore.add("§7- Consider in eco rounds");
+        fivesevenLore.add("§7- Difficulty: §e☆☆");
+        fivesevenMeta.setLore(fivesevenLore);
+        fiveseven.setItemMeta(fivesevenMeta);
+
+        ItemMeta mp9Meta = mp9.getItemMeta();
+        List<String> mp9Lore = new ArrayList<>();
+        mp9Lore.add("§7Price: §a"+CSWeaponType.MP9.getCost());
+        mp9Lore.add("§7- A burst of damage to deny an enemy rush");
+        mp9Lore.add("§7- Consider in the first three rounds of the half");
+        mp9Lore.add("§7- Difficulty: §a☆");
+        mp9Meta.setLore(mp9Lore);
+        mp9.setItemMeta(mp9Meta);
+
+        ItemMeta famasMeta = famas.getItemMeta();
+        List<String> famasLore = new ArrayList<>();
+        famasLore.add("§7Price: §a"+CSWeaponType.FAMAS.getCost());
+        famasLore.add("§7- Cheap but effective against armored enemies");
+        famasLore.add("§7- Consider in force buy rounds");
+        famasLore.add("§7- Difficulty: §6☆☆☆");
+        famasMeta.setLore(famasLore);
+        famas.setItemMeta(famasMeta);
+
+        ItemMeta augMeta = aug.getItemMeta();
+        List<String> augLore = new ArrayList<>();
+        augLore.add("§7Price: §a"+CSWeaponType.AUG.getCost());
+        augLore.add("§7- An optional scope for exceptional accuracy");
+        augLore.add("§7- Consider in full buy rounds");
+        augLore.add("§7- Difficulty: §6☆☆☆");
+        augMeta.setLore(augLore);
+        aug.setItemMeta(augMeta);
+
+        ItemMeta m4a4Meta = m4a4.getItemMeta();
+        List<String> m4a4Lore = new ArrayList<>();
+        m4a4Lore.add("§7Price: §a"+CSWeaponType.M4A4.getCost());
+        m4a4Lore.add("§7- Good accuracy, with ammo to spare");
+        m4a4Lore.add("§7- Consider in full buy rounds");
+        m4a4Lore.add("§7- Difficulty: §6☆☆☆");
+        m4a4Meta.setLore(m4a4Lore);
+        m4a4.setItemMeta(m4a4Meta);
+
 
         //items for ts
         ItemStack glock = CSWeaponType.GLOCK.getItem();
@@ -642,6 +731,60 @@ public class CounterShot extends Game implements Listener {
         ItemStack galil = CSWeaponType.GALIL.getItem();
         ItemStack ak47 = CSWeaponType.AK47.getItem();
         ItemStack sg553 = CSWeaponType.SG553.getItem();
+
+        ItemMeta glockMeta = glock.getItemMeta();
+        List<String> glockLore = new ArrayList<>();
+        glockLore.add("§7Price: §a"+CSWeaponType.GLOCK.getCost());
+        glockLore.add("§7- Deadly up close, just a nuisance at range");
+        glockLore.add("§7- Consider in the first round of the half");
+        glockLore.add("§7- Difficulty: §e☆☆");
+        glockMeta.setLore(glockLore);
+        glock.setItemMeta(glockMeta);
+
+        ItemMeta tec9Meta = tec9.getItemMeta();
+        List<String> tec9Lore = new ArrayList<>();
+        tec9Lore.add("§7Price: §a"+CSWeaponType.TEC9.getCost());
+        tec9Lore.add("§7- Highly mobile, effective at range and up close");
+        tec9Lore.add("§7- Consider in eco rounds");
+        tec9Lore.add("§7- Difficulty: §6☆☆☆");
+        tec9Meta.setLore(tec9Lore);
+        tec9.setItemMeta(tec9Meta);
+
+        ItemMeta mac10Meta = mac10.getItemMeta();
+        List<String> mac10Lore = new ArrayList<>();
+        mac10Lore.add("§7Price: §a"+CSWeaponType.MAC10.getCost());
+        mac10Lore.add("§7- A run and gun tool for breaching bomb sites");
+        mac10Lore.add("§7- Consider in the first three rounds of the half");
+        mac10Lore.add("§7- Difficulty: §a☆");
+        mac10Meta.setLore(mac10Lore);
+        mac10.setItemMeta(mac10Meta);
+
+        ItemMeta galilMeta = galil.getItemMeta();
+        List<String> galilLore = new ArrayList<>();
+        galilLore.add("§7Price: §a"+CSWeaponType.GALIL.getCost());
+        galilLore.add("§7- Cheap but effective against armored enemies");
+        galilLore.add("§7- Consider in force buy rounds");
+        galilLore.add("§7- Difficulty: §6☆☆☆");
+        galilMeta.setLore(galilLore);
+        galil.setItemMeta(galilMeta);
+
+        ItemMeta ak47Meta = ak47.getItemMeta();
+        List<String> ak47Lore = new ArrayList<>();
+        ak47Lore.add("§7Price: §a"+CSWeaponType.AK47.getCost());
+        ak47Lore.add("§7- The classic, accurate and deadly workhorse");
+        ak47Lore.add("§7- Consider in full buy rounds");
+        ak47Lore.add("§7- Difficulty: §c☆☆☆☆");
+        ak47Meta.setLore(ak47Lore);
+        ak47.setItemMeta(ak47Meta);
+
+        ItemMeta sg553Meta = sg553.getItemMeta();
+        List<String> sg553Lore = new ArrayList<>();
+        sg553Lore.add("§7Price: §a"+CSWeaponType.SG553.getCost());
+        sg553Lore.add("§7- A lethal weapon made deadlier with a scope");
+        sg553Lore.add("§7- Consider in full buy rounds");
+        sg553Lore.add("§7- Difficulty: §6☆☆☆");
+        sg553Meta.setLore(sg553Lore);
+        sg553.setItemMeta(sg553Meta);
 
 
 
