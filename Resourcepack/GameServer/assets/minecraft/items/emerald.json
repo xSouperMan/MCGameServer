@@ -5,78 +5,15 @@
       "index": 0,
       "fallback": {
         "type": "minecraft:model",
-        "model": "minecraft:item/stick"
+        "model": "minecraft:item/emerald"
       },
       "entries": [
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/0"
+            "model": "minecraft:item/shop"
           },
-          "threshold": 20000000
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/1"
-            },
-            "threshold": 20000001
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/2"
-            },
-            "threshold": 20000002
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/3"
-            },
-            "threshold": 20000003
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/4"
-            },
-            "threshold": 20000004
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/5"
-            },
-            "threshold": 20000005
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/6"
-            },
-            "threshold": 20000006
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/7"
-            },
-            "threshold": 20000007
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/8"
-            },
-            "threshold": 20000008
-        },
-        {
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/9"
-            },
-            "threshold": 20000009
+          "threshold": 10000001
         }
       ]
     }

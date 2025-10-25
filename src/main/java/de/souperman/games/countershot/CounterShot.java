@@ -306,12 +306,24 @@ public class CounterShot extends Game implements Listener {
 
             Inventory inv = p.getInventory();
             ItemStack shop = new ItemStack(Material.EMERALD);
+            ItemMeta shopMeta = shop.getItemMeta();
+            shopMeta.setCustomModelData(10000001);
+            shopMeta.setDisplayName("§cShop §7- right click to buy");
+            shopMeta.setHideTooltip(true);
+            shop.setItemMeta(shopMeta);
 
             inv.setItem(0, player.getKnifeItem());
             inv.setItem(1, player.getPistolItem());
             inv.setItem(2, player.getSecondaryItem());
             inv.setItem(8, shop);
-
+            //TEMPORARY: ---------
+            ItemStack c4 = new ItemStack(Material.BOOK);
+            ItemMeta c4Meta = c4.getItemMeta();
+            c4Meta.setDisplayName("§cBomb");
+            c4Meta.setCustomModelData(10000001);
+            c4.setItemMeta(c4Meta);
+            inv.setItem(5, c4);
+            //--------------------
         }
         for(Player p : ct) {
             p.playNote(p.getLocation(), Instrument.BIT, Note.flat(0, Note.Tone.A));
@@ -602,15 +614,15 @@ public class CounterShot extends Game implements Listener {
         p250Lore.add("§7- Consider in eco rounds");
         p250Lore.add("§7- Difficulty: §a☆");
         p250Meta.setLore(p250Lore);
-        p250.setItemMeta(deagleMeta);
+        p250.setItemMeta(p250Meta);
 
-        ItemMeta novaMeta = p250.getItemMeta();
+        ItemMeta novaMeta = nova.getItemMeta();
         List<String> novaLore = new ArrayList<>();
         novaLore.add("§7Price: §a"+CSWeaponType.NOVA.getCost());
         novaLore.add("§7- A popular, if modest, damage upgrade");
         novaLore.add("§7- Consider in eco rounds");
         novaLore.add("§7- Difficulty: §a☆");
-        novaMeta.setLore(p250Lore);
+        novaMeta.setLore(novaLore);
         nova.setItemMeta(novaMeta);
 
 

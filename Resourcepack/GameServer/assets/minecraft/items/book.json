@@ -1,19 +1,20 @@
 {
-	"model": {
-        "type": "select",
-        "property": "custom_model_data",
-        "fallback": {
-            "type": "model",
-            "model": "item/book"
-        },
-        "cases": [
-            {
-                "when": "c4",
-                "model": {
-                    "type": "model",
-                    "model": "item/c4"
-                }
-            }
-        ]
+    "model": {
+      "type": "minecraft:range_dispatch",
+      "property": "minecraft:custom_model_data",
+      "index": 0,
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/blaze_rod"
+      },
+      "entries": [
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/c4"
+          },
+          "threshold": 10000001
+        }
+      ]
     }
-}
+  }

@@ -11,35 +11,35 @@
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/ak47"
+            "model": "minecraft:item/mp9"
           },
           "threshold": 10000007
         },
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/awp"
+            "model": "minecraft:item/mac10"
           },
           "threshold": 10000008
         },
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/awp"
+            "model": "minecraft:item/nova"
           },
           "threshold": 10000009
         },
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/awp"
+            "model": "minecraft:item/xm1015"
           },
           "threshold": 10000010
         },
         {
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/awp"
+            "model": "minecraft:item/p90"
           },
           "threshold": 10000011
         }

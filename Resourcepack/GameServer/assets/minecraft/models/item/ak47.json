@@ -219,7 +219,7 @@
 		{
 			"from": [7.725, 8.475, -6.5],
 			"to": [8.275, 10.025, -6],
-			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8.5, -7]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8.5, -7]},
 			"faces": {
 				"north": {"uv": [4, 7, 4.5, 8], "texture": "#1"},
 				"east": {"uv": [7, 4, 7.5, 5], "texture": "#1"},
@@ -432,17 +432,18 @@
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"gui": {
-			"rotation": [-180, 90, -180],
-			"scale": [0.53, 0.53, 0.53]
+			"rotation": [90, 52, -90],
+			"scale": [0.77, 0.53, 0.53]
 		},
 		"head": {
 			"translation": [0, 11, 0]
 		},
 		"fixed": {
-			"rotation": [180, -90, 180]
+			"rotation": [-180, -90, -180]
 		},
 		"on_shelf": {
-			"rotation": [76.25, 0, 90]
+			"rotation": [76.25, 0, 90],
+			"translation": [0, -1.5, 0]
 		}
 	},
 	"groups": [

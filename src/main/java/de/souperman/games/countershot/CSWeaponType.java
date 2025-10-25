@@ -4,24 +4,24 @@ import org.bukkit.inventory.ItemStack;
 
 public enum CSWeaponType {
     USPS(CSVar.usps_item , CSWeaponClass.PISTOL, 24, 12, 43, 4, 300, 35, 0.575f, 4f, 200),       // CT
-    FIVESEVEN(CSVar.fiveseven_item,CSWeaponClass.PISTOL, 0, 0, 45, 0, 0, 0, 0f, 0f, 0),          // CT
-    GLOCK(CSVar.glock_item,CSWeaponClass.PISTOL, 120, 20, 45, 0, 0, 30, 0f, 0f, 0),                 // T
-    TEC9(CSVar.tec9_item,CSWeaponClass.PISTOL, 0, 0, 51, 0, 0, 0, 0f, 0f, 0),                    // T
-    DEAGLE(CSVar.deagle_item,CSWeaponClass.PISTOL, 0, 0, 44, 0, 0, 0, 0f, 0f, 0),                 // BOTH
-    P250(CSVar.p250_item, CSWeaponClass.SECONDARY, 0, 0, 45, 0, 0, 0, 0f, 0f, 0),                // BOTH
-    MP9(CSVar.mp9_item, CSWeaponClass.SECONDARY, 0, 0, 43, 0, 0, 0, 0f, 0f, 0),                  // CT
-    MAC10(CSVar.mac10_item, CSWeaponClass.SECONDARY, 0, 0, 51, 0, 0, 0, 0f, 0f, 0),              // T
-    NOVA(CSVar.nova_item, CSWeaponClass.SECONDARY, 0, 0, 95, 0, 0, 0, 0f, 0f, 0),                // BOTH
-    XM1015(CSVar.xm1015_item, CSWeaponClass.SECONDARY, 0, 0, 84, 0, 0, 0, 0f, 0f, 0),            // BOTH
-    P90(CSVar.p90_item, CSWeaponClass.SECONDARY, 0, 0, 67, 0, 0, 0, 0f, 0f, 0),                  // BOTH
-    GALIL(CSVar.galil_item, CSWeaponClass.SECONDARY, 0, 0, 61, 0, 0, 0, 0f, 0f, 0),              // T
-    FAMAS(CSVar.famas_item, CSWeaponClass.SECONDARY, 0, 0, 66, 0, 0, 0, 0f, 0f, 0),              // CT
-    AUG(CSVar.aug_item, CSWeaponClass.SECONDARY, 0, 0, 75, 0, 0, 0, 0f, 0f, 0),                  // CT
-    SG553(CSVar.sg553_item, CSWeaponClass.SECONDARY, 0, 0, 55, 0, 0, 0, 0f, 0f, 0),              // T
-    M4A4(CSVar.m4a4_item, CSWeaponClass.SECONDARY, 0, 0, 61, 0, 0, 0, 0f, 0f, 0),                // CT
-    AK47(CSVar.ak47_item, CSWeaponClass.SECONDARY, 0, 0, 49, 0, 0, 0, 0f, 0f, 0),                // T
-    SSG08(CSVar.ssg08_item, CSWeaponClass.SECONDARY, 0, 0, 74, 0, 0, 0, 0f, 0f, 0),              // BOTH
-    AWP(CSVar.awp_item, CSWeaponClass.SECONDARY, 30, 5, 73, 29, 100, 115, 97.5f, 4f, 4750),       // BOTH
+    FIVESEVEN(CSVar.fiveseven_item,CSWeaponClass.PISTOL, 100, 20, 45, 3, 300, 32, 0.9115f, 4f, 500),          // CT
+    GLOCK(CSVar.glock_item,CSWeaponClass.PISTOL, 120, 20, 45, 3, 300, 30, 0.47f, 4f, 200),                 // T
+    TEC9(CSVar.tec9_item,CSWeaponClass.PISTOL, 90, 18, 51, 2, 300, 33, 0.906f, 4f, 500),                    // T
+    DEAGLE(CSVar.deagle_item,CSWeaponClass.PISTOL, 35, 7, 44, 5, 300, 53, 0.932f, 3.9f, 700),                 // BOTH
+    P250(CSVar.p250_item, CSWeaponClass.SECONDARY, 26, 13, 45, 3, 300, 38, 0.64f, 4f, 300),                // BOTH
+    MP9(CSVar.mp9_item, CSWeaponClass.SECONDARY, 0, 0, 43, 1, 0, 0, 0f, 0f, 0),                  // CT
+    MAC10(CSVar.mac10_item, CSWeaponClass.SECONDARY, 0, 0, 51, 1, 0, 0, 0f, 0f, 0),              // T
+    NOVA(CSVar.nova_item, CSWeaponClass.SECONDARY, 0, 0, 95, 18, 0, 0, 0f, 0f, 0),                // BOTH
+    XM1015(CSVar.xm1015_item, CSWeaponClass.SECONDARY, 0, 0, 84, 7, 0, 0, 0f, 0f, 0),            // BOTH
+    P90(CSVar.p90_item, CSWeaponClass.SECONDARY, 0, 0, 67, 1, 0, 0, 0f, 0f, 0),                  // BOTH
+    GALIL(CSVar.galil_item, CSWeaponClass.SECONDARY, 0, 0, 61, 2, 0, 0, 0f, 0f, 0),              // T
+    FAMAS(CSVar.famas_item, CSWeaponClass.SECONDARY, 0, 0, 66, 2, 0, 0, 0f, 0f, 0),              // CT
+    AUG(CSVar.aug_item, CSWeaponClass.SECONDARY, 0, 0, 75, 2, 0, 0, 0f, 0f, 0),                  // CT
+    SG553(CSVar.sg553_item, CSWeaponClass.SECONDARY, 0, 0, 55, 2, 0, 0, 0f, 0f, 0),              // T
+    M4A4(CSVar.m4a4_item, CSWeaponClass.SECONDARY, 0, 0, 61, 2, 0, 0, 0f, 0f, 0),                // CT
+    AK47(CSVar.ak47_item, CSWeaponClass.SECONDARY, 0, 0, 49, 2, 0, 0, 0f, 0f, 0),                // T
+    SSG08(CSVar.ssg08_item, CSWeaponClass.SECONDARY, 0, 0, 74, 25, 0, 0, 0f, 0f, 0),              // BOTH
+    AWP(CSVar.awp_item, CSWeaponClass.SECONDARY, 30, 5, 73, 29, 100, 115, 0.975f, 4f, 4750),       // BOTH
     KNIFE(CSVar.knife_item, CSWeaponClass.KNIFE, 0, 0, 0, 0, 0, 0, 0f, 0f, 0),                   // -
     NONE(CSVar.none_item, CSWeaponClass.NONE, 0, 0, 0, 0, 0, 0, 0f, 0f, 0);                      // -
 
