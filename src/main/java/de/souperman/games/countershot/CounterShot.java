@@ -57,7 +57,7 @@ public class CounterShot extends Game implements Listener {
     private static BukkitRunnable run;
     private static BukkitRunnable gameRun;
 
-    private static BossBar buyPhaseTimerBossBar;
+    private static BossBar phaseTimerBossBar;
 
 
     public CounterShot() { //test
@@ -80,13 +80,13 @@ public class CounterShot extends Game implements Listener {
         mapVote = Bukkit.createInventory(null, 36, "Pick a map");
         teamSelectItem = new ItemStack(Material.PAPER);
 
-        buyPhaseTimerBossBar = Bukkit.createBossBar(
+        phaseTimerBossBar = Bukkit.createBossBar(
                "§a$ §fBuy Phase §a$",
                 BarColor.GREEN,
                 BarStyle.SOLID
         );
-        buyPhaseTimerBossBar.setProgress(0d);
-        buyPhaseTimerBossBar.setVisible(false);
+        phaseTimerBossBar.setProgress(0d);
+        phaseTimerBossBar.setVisible(false);
 
         invInit();
         initRunnable();
@@ -97,7 +97,7 @@ public class CounterShot extends Game implements Listener {
     public boolean leave(Player p) {
         if(players.contains(p)) {
             players.remove(p);
-            buyPhaseTimerBossBar.removePlayer(p);
+            phaseTimerBossBar.removePlayer(p);
             if(players.size() < playersNeeded) {
                 run.cancel();
                 runningCountdown = false;
@@ -118,7 +118,7 @@ public class CounterShot extends Game implements Listener {
             p.getInventory().setHeldItemSlot(4);
             p.setHealth(20);
             p.setFoodLevel(20);
-            buyPhaseTimerBossBar.addPlayer(p);
+            phaseTimerBossBar.addPlayer(p);
 
             if(players.size() >= playersNeeded && !runningCountdown) {
                 counter = countdown;
@@ -172,35 +172,13 @@ public class CounterShot extends Game implements Listener {
         };
     }
 
-    private void switchPhase(CSphase phse) {
-        for(CSPlayer p : CSplayers) {
-            p.getPlayer().closeInventory();
-        }
-        switch (phse) {
-            case PHASE_BUY:
-                phase = phse;
-                buyPhaseTimerBossBar.setVisible(true);
-                break;
-            case PHASE_GAME:
-                phase = phse;
-                buyPhaseTimerBossBar.setVisible(false);
-                break;
-            case PHASE_LOBBY:
-                phase = phse;
-                buyPhaseTimerBossBar.setVisible(false);
-                break;
-            default:
-                phase = phse;
-        }
-    }
-
     private void initGameRunnable() {
         gameRun = new BukkitRunnable() {
             @Override
             public void run() {
                 switch (phase) {
                     case PHASE_BUY:
-                        buyPhaseTimerBossBar.setProgress((double) phaseCounter /20);
+                        phaseTimerBossBar.setProgress((double) phaseCounter / buyPhaseTime);
                         switch (phaseCounter) {
                             case 20:
                                 for(CSPlayer p : CSplayers) {
@@ -216,14 +194,29 @@ public class CounterShot extends Game implements Listener {
                         }
                         break;
                     case PHASE_GAME:
+                        phaseTimerBossBar.setProgress((double) phaseCounter / roundTime);
                         switch (phaseCounter) {
+                            case 5:
+                            case 4:
+                            case 3:
+                            case 2:
+                            case 1:
+                                for(CSPlayer p : CSplayers) {
+                                    p.getPlayer().playNote(p.getPlayer().getLocation(), Instrument.BIT, Note.natural(2, Note.Tone.C));
+                                }
+                                break;
+
                             case 0: // game time ended
+                                for(CSPlayer p : CSplayers) {
+                                    p.getPlayer().playSound(p.getPlayer().getLocation(), Sound.ENTITY_DRAGON_FIREBALL_EXPLODE, 1f, 1f);
+                                }
                                 sendGameMessage("TEST: GAME ENDED TIME");
                                 break;
                         }
 
                         break;
                     case PHASE_BOMB:
+                        phaseTimerBossBar.setProgress((double) phaseCounter / bombTime);
                         break;
                     case PHASE_OVER:
                         break;
@@ -236,6 +229,34 @@ public class CounterShot extends Game implements Listener {
                 phaseCounter--;
             }
         };
+    }
+
+    private void switchPhase(CSphase phse) {
+        for(CSPlayer p : CSplayers) {
+            p.getPlayer().closeInventory();
+        }
+        switch (phse) {
+            case PHASE_BUY:
+                round++;
+                phaseTimerBossBar.setVisible(true);
+                phaseTimerBossBar.setColor(BarColor.GREEN);
+                break;
+            case PHASE_GAME:
+                phaseTimerBossBar.setVisible(true);
+                phaseTimerBossBar.setColor(BarColor.WHITE);
+                break;
+            case PHASE_LOBBY:
+                phaseTimerBossBar.setVisible(false);
+                break;
+            case PHASE_BOMB:
+                phaseTimerBossBar.setVisible(true);
+                phaseTimerBossBar.setColor(BarColor.RED);
+                break;
+            case PHASE_OVER:
+                phaseTimerBossBar.setVisible(false);
+                break;
+        }
+        phase = phse;
     }
 
     private void startGame() {

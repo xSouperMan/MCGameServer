@@ -18,7 +18,7 @@ public class CSWeapon {
 
     private CSWeaponType type;
     private int mag;
-    private static boolean onDelay = false;
+    private boolean onDelay = false;
     private boolean onReload = false;
 
     public CSWeapon(CSWeaponType type) {
@@ -91,6 +91,7 @@ public class CSWeapon {
             switch (type) {
                 case USPS:
                     player.playNote(player.getLocation(), Instrument.BASS_DRUM, Note.flat(0, Note.Tone.D));
+                    player.playSound(player.getLocation(), Sound.ENTITY_ITEM_FRAME_PLACE, 1f, 1f);
                     break;
                 case DEAGLE:
                     player.getWorld().playSound(loc, Sound.ENTITY_FIREWORK_ROCKET_BLAST, 1f, 1f);

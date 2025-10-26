@@ -27,7 +27,7 @@ public enum CSWeaponType {
 
     private final ItemStack item;
     private final CSWeaponClass weaponClass;
-    private int rounds;
+    private final int rounds;
     private final int magSize;
     private final int reloadTime; // Ticks
     private final int shootDelay; // Ticks
@@ -52,7 +52,7 @@ public enum CSWeaponType {
     }
 
     public ItemStack getItem() {
-        return item;
+        return item.clone();
     }
 
     public CSWeaponClass getWeaponClass() {
