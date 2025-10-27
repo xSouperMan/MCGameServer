@@ -426,6 +426,13 @@ public class CounterShot extends Game implements Listener {
         if(!(e.getWhoClicked() instanceof Player)) { return; }
         Player p = (Player) e.getWhoClicked();
         if(!players.contains(p)) {return;}
+        CSPlayer csplayer;
+        try {
+            csplayer = getPlayer(p);
+        } catch(Exception ex) {
+            Bukkit.broadcastMessage("DEBUG: onClick() Method: "+ p.getDisplayName()  +" is not a csplayer");
+            return;
+        }
 
         if(isInProgress()) {
             switch (e.getView().getTitle()) {
@@ -493,6 +500,26 @@ public class CounterShot extends Game implements Listener {
                     }
                     break;
 
+                case "§aShop - left-click to buy, right-click to sell":
+                    e.setCancelled(true);
+
+                    if(e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR ) {
+                        return;
+                    }
+                    String clickedName = e.getCurrentItem().getItemMeta().getDisplayName().toLowerCase();
+                    if(clickedName.contains("usps")) {
+                            if(csplayer.getPistol().getType() != CSWeaponType.USPS) {
+                                if(csplayer.getBalance() < CSWeaponType.USPS.getCost()) {
+
+                                } else { //TODO: dropped items are reloaded when picked up
+                                    p.getWorld().dropItem(p.getLocation(), csplayer.getPistolItem());
+                                    csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
+                                    p.getInventory().setItem(1, csplayer.getPistolItem());
+                                }
+                            }
+                    }
+
+                    break;
 
                 default:
                     return;
@@ -606,8 +633,9 @@ public class CounterShot extends Game implements Listener {
 
         // SHOPS INVENTORY ------------------------
 
-        shopCT = Bukkit.createInventory(null, 54);
-        shopT = Bukkit.createInventory(null, 54);
+        shopCT = Bukkit.createInventory(null, 54, "§aShop - left-click to buy, right-click to sell");
+        shopT = Bukkit.createInventory(null, 54, "§aShop - left-click to buy, right-click to sell");
+
 
         //items for both teams
         ItemStack deagle = CSWeaponType.DEAGLE.getItem();

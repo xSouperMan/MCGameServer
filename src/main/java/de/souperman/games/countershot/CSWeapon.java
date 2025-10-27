@@ -262,4 +262,8 @@ public class CSWeapon {
     public ItemStack getItem() {
         return this.type.getItem();
     }
+
+    public CSWeaponType getType() {
+        return this.type;
+    }
 }
