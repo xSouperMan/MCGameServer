@@ -23,6 +23,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -506,18 +507,38 @@ public class CounterShot extends Game implements Listener {
                     if(e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR ) {
                         return;
                     }
-                    String clickedName = e.getCurrentItem().getItemMeta().getDisplayName().toLowerCase();
-                    if(clickedName.contains("usps")) {
-                            if(csplayer.getPistol().getType() != CSWeaponType.USPS) {
-                                if(csplayer.getBalance() < CSWeaponType.USPS.getCost()) {
+                    String clickedName = Objects.requireNonNull(e.getCurrentItem().getItemMeta()).getDisplayName().toLowerCase();
 
-                                } else { //TODO: dropped items are reloaded when picked up
-                                    p.getWorld().dropItem(p.getLocation(), csplayer.getPistolItem());
-                                    csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
-                                    p.getInventory().setItem(1, csplayer.getPistolItem());
-                                }
+
+                    if(clickedName.contains("usps")) {
+                        if(csplayer.getPistol().getType() != CSWeaponType.USPS) {
+                            if(csplayer.getBalance() < CSWeaponType.USPS.getCost()) {
+
+                                p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
+
+                            } else { //TODO: dropped items are reloaded when picked up (Hashmap here)
+                                p.getWorld().dropItem(p.getLocation(), csplayer.getPistolItem());
+                                csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
+                                p.getInventory().setItem(1, csplayer.getPistolItem());
                             }
+                        }
                     }
+
+                    if(clickedName.contains("fiveseven")) {
+                        if(csplayer.getPistol().getType() != CSWeaponType.FIVESEVEN) {
+                            if(csplayer.getBalance() < CSWeaponType.FIVESEVEN.getCost()) {
+
+                                p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
+
+                            } else { //TODO: dropped items are reloaded when picked up (Hashmap here)
+                                p.getWorld().dropItem(p.getLocation(), csplayer.getPistolItem());
+                                csplayer.setPistol(new CSWeapon(CSWeaponType.FIVESEVEN));
+                                p.getInventory().setItem(1, csplayer.getPistolItem());
+                            }
+                        }
+                    }
+
+
 
                     break;
 
