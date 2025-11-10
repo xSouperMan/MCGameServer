@@ -7,13 +7,16 @@ import org.bukkit.*;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
@@ -21,10 +24,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CounterShot extends Game implements Listener {
@@ -50,6 +50,8 @@ public class CounterShot extends Game implements Listener {
     private static Inventory shopCT;
     private static Inventory shopT;
 
+    private static HashMap<Item, CSWeapon> droppedItems;
+
     private static ArrayList<Player> t;
     private static ArrayList<Player> ct;
     private static ArrayList<Player> players;
@@ -72,14 +74,16 @@ public class CounterShot extends Game implements Listener {
         phaseCounter = 0;
         phase = CSphase.PHASE_LOBBY;
 
-        players = new ArrayList<Player>();
-        t = new ArrayList<Player>();
-        ct = new ArrayList<Player>();
-        CSplayers = new ArrayList<CSPlayer>();
+        players = new ArrayList<>();
+        t = new ArrayList<>();
+        ct = new ArrayList<>();
+        CSplayers = new ArrayList<>();
 
         teamSelect = Bukkit.createInventory(null, 27, "Select Team");
         mapVote = Bukkit.createInventory(null, 36, "Pick a map");
         teamSelectItem = new ItemStack(Material.PAPER);
+
+        droppedItems = new HashMap<Item, CSWeapon>();
 
         phaseTimerBossBar = Bukkit.createBossBar(
                "§a$ §fBuy Phase §a$",
@@ -516,10 +520,10 @@ public class CounterShot extends Game implements Listener {
 
                                 p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
 
-                            } else { //TODO: dropped items are reloaded when picked up (Hashmap here)
-                                p.getWorld().dropItem(p.getLocation(), csplayer.getPistolItem());
-                                csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
+                            } else {
                                 p.getInventory().setItem(1, csplayer.getPistolItem());
+                                dropWeapon(csplayer.getPlayer().getEyeLocation(), csplayer.getPistol());
+                                csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
                             }
                         }
                     }
@@ -530,10 +534,10 @@ public class CounterShot extends Game implements Listener {
 
                                 p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
 
-                            } else { //TODO: dropped items are reloaded when picked up (Hashmap here)
-                                p.getWorld().dropItem(p.getLocation(), csplayer.getPistolItem());
-                                csplayer.setPistol(new CSWeapon(CSWeaponType.FIVESEVEN));
+                            } else {
                                 p.getInventory().setItem(1, csplayer.getPistolItem());
+                                dropWeapon(csplayer.getPlayer().getEyeLocation(), csplayer.getPistol());
+                                csplayer.setPistol(new CSWeapon(CSWeaponType.FIVESEVEN));
                             }
                         }
                     }
@@ -551,46 +555,19 @@ public class CounterShot extends Game implements Listener {
 
     }
 
-    @EventHandler
-    public void onMove(PlayerMoveEvent e) {
-        if(players == null) { return; }
+    private void dropWeapon(Location loc, CSWeapon weapon) {
+        Item dropped = Objects.requireNonNull(loc.getWorld()).dropItem(loc, weapon.getItem());
+        droppedItems.put(dropped, weapon);
 
-        if(phase != CSphase.PHASE_BUY || !players.contains(e.getPlayer())) {return;}
-        Location from = e.getFrom();
-        Location to = e.getTo();
-        if (to == null) return;
-
-        //player can look around but not move
-        if (from.getX() != to.getX() || from.getY() != to.getY() || from.getZ() != to.getZ()) {
-            to.setX(from.getX());
-            to.setY(from.getY());
-            to.setZ(from.getZ());
-            e.setTo(to);
-        }
+        dropped.setUnlimitedLifetime(true);
     }
 
-    @EventHandler
-    public void onHunger(FoodLevelChangeEvent e) {
-        if(players == null) { return; }
-
-        if(e.getEntity() instanceof Player) {
-            Player p = (Player) e.getEntity();
-            if(players.contains(p)) {
-                e.setCancelled(true);
-            }
+    private void clearDroppedItems() {
+        for(Map.Entry<Item, CSWeapon> entry : droppedItems.entrySet()) {
+            entry.getKey().setUnlimitedLifetime(false);
+            entry.getKey().remove();
         }
-    }
-
-    @EventHandler
-    public void onRegen(EntityRegainHealthEvent e) {
-        if(players == null) { return; }
-
-        if(e.getEntity() instanceof Player) {
-            Player p = (Player) e.getEntity();
-            if(players.contains(p)) {
-                e.setCancelled(true);
-            }
-        }
+        droppedItems.clear();
     }
 
     private static void invInit() {
@@ -897,6 +874,111 @@ public class CounterShot extends Game implements Listener {
 
     private static void initWeapons() {
 
+    }
+
+    @EventHandler
+    public void onMove(PlayerMoveEvent e) {
+        if(players == null) { return; }
+
+        if(phase != CSphase.PHASE_BUY || !players.contains(e.getPlayer())) {return;}
+        Location from = e.getFrom();
+        Location to = e.getTo();
+        if (to == null) return;
+
+        //player can look around but not move
+        if (from.getX() != to.getX() || from.getY() != to.getY() || from.getZ() != to.getZ()) {
+            to.setX(from.getX());
+            to.setY(from.getY());
+            to.setZ(from.getZ());
+            e.setTo(to);
+        }
+    }
+
+    @EventHandler
+    public void onHunger(FoodLevelChangeEvent e) {
+        if(players == null) { return; }
+
+        if(e.getEntity() instanceof Player) {
+            Player p = (Player) e.getEntity();
+            if(players.contains(p)) {
+                e.setCancelled(true);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onRegen(EntityRegainHealthEvent e) {
+        if(players == null) { return; }
+
+        if(e.getEntity() instanceof Player) {
+            Player p = (Player) e.getEntity();
+            if(players.contains(p)) {
+                e.setCancelled(true);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPickup(EntityPickupItemEvent e) throws Exception {
+        if(!(e.getEntity() instanceof Player)) {
+            return;
+        }
+        Player p = (Player) e.getEntity();
+
+        if(!CSplayers.contains(p)) {
+            return;
+        }
+        CSPlayer csP = getPlayer(p);
+
+        if(!csP.isAlive() || this.phase == CSphase.PHASE_LOBBY || this.phase == CSphase.PHASE_OVER) {
+            e.setCancelled(true);
+        }
+
+        ItemStack pickedUp = e.getItem().getItemStack();
+        int index = 0;
+
+        switch (pickedUp.getType()) {
+            case STICK:
+                if(!(csP.getPistol() == null || csP.getPistol().getType() == CSWeaponType.NONE)) {
+                    e.setCancelled(true);
+                }
+                index = 1;
+                break;
+            case BLAZE_ROD:
+            case BREEZE_ROD:
+                if(!(csP.getSecondary() == null || csP.getSecondary().getType() == CSWeaponType.NONE)) {
+                    e.setCancelled(true);
+                }
+                index = 2;
+                break;
+        }
+
+        if(index == 0) {return;}
+        if(droppedItems.containsKey(e.getItem())) {
+            p.getInventory().setItem(index, pickedUp);
+            csP.setPistol(droppedItems.get(e.getItem()));
+            droppedItems.remove(e.getItem());
+            e.setCancelled(true);
+            e.getItem().setUnlimitedLifetime(false);
+            e.getItem().remove();
+        }
+    }
+
+
+    @EventHandler
+    public void onDrop(PlayerDropItemEvent e) throws Exception {
+        Player p = e.getPlayer();
+        if(!players.contains(p)) {return;}
+
+        if(!(getPlayer(p).isAlive()) ||
+          e.getItemDrop().getItemStack().getType() == Material.BONE ||
+          this.phase == CSphase.PHASE_LOBBY ||
+          this.phase == CSphase.PHASE_OVER) {
+            e.setCancelled(true);
+        }
+
+
+        //TODO:
     }
 
 }
