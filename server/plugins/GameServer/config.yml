@@ -1,21 +1,6 @@
-spawn:
+gamelocations:
   world: world
-  x: 0.5
+  name: !!java.lang.StringBuilder {}
+  x: 0.0
   y: 0.0
-  z: 0.5
-  yaw: 0.0
-  pitch: 0.0
-  cs:
-    world: world
-    x: 0.5
-    y: 0.0
-    z: 0.5
-    yaw: 5.1409006E-7
-    pitch: 0.007125579
-  lobby:
-    world: world
-    x: 0.5
-    y: 0.0
-    z: 0.5
-    yaw: 5.1409006E-7
-    pitch: 0.007125579
+  z: 0.0

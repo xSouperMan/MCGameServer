@@ -24,7 +24,7 @@ public class CMDsetspawn implements CommandExecutor {
         String path = "spawn."+args[0];
         FileConfiguration config = Main.getPlugin().getConfig();
 
-        if(Main.getPlugin().getConfig().getString(path) == null) {
+        if(config.getString(path) == null) {
             Player p = (Player) sender;
             p.sendMessage(Vars.UNKNOWN_USAGE+ " /setspawn <where> <'nyp' if you want to ignore your facing angle>");
             return false;

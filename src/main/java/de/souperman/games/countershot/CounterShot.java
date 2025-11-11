@@ -236,6 +236,18 @@ public class CounterShot extends Game implements Listener {
         };
     }
 
+    private void sendTMessage(String s) {
+        for(Player p : t) {
+            p.sendMessage(s);
+        }
+    }
+
+    private void sendCTMessage(String s) {
+        for(Player p : ct) {
+            p.sendMessage(s);
+        }
+    }
+
     private void switchPhase(CSphase phse) {
         for(CSPlayer p : CSplayers) {
             p.getPlayer().closeInventory();
@@ -424,136 +436,6 @@ public class CounterShot extends Game implements Listener {
         }
     }
 
-    @EventHandler
-    public void onClick(InventoryClickEvent e) {
-        if(players == null) { return; }
-
-        if(!(e.getWhoClicked() instanceof Player)) { return; }
-        Player p = (Player) e.getWhoClicked();
-        if(!players.contains(p)) {return;}
-        CSPlayer csplayer;
-        try {
-            csplayer = getPlayer(p);
-        } catch(Exception ex) {
-            Bukkit.broadcastMessage("DEBUG: onClick() Method: "+ p.getDisplayName()  +" is not a csplayer");
-            return;
-        }
-
-        if(isInProgress()) {
-            switch (e.getView().getTitle()) {
-                case "Buy Menu":
-                    e.setCancelled(true);
-                    Inventory inv = e.getClickedInventory();
-                    break;
-
-                default:
-                    return;
-            }
-
-
-
-        } else {
-            switch (e.getView().getTitle()) {
-
-
-                case "Select Team":
-                    e.setCancelled(true);
-
-                    ItemStack clicked = e.getCurrentItem();
-
-                    switch (clicked.getType()) {
-                        case BOOK:
-                        case RED_STAINED_GLASS_PANE:
-                            if(ct.contains(p)) {
-                                ct.remove(p);
-                            }
-                            if(t.contains(p)) {
-                                p.sendMessage(Vars.PRFX_ERR+"You already set your preference to play as a §4Terrorist§f!");
-                            } else {
-                                t.add(p);
-                                p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §4Terrorist§f!");
-                            }
-                            p.closeInventory();
-                            break;
-                        case SHEARS:
-                        case BLUE_STAINED_GLASS_PANE:
-                            if(t.contains(p)) {
-                                t.remove(p);
-                            }
-                            if(ct.contains(p)) {
-                                p.sendMessage(Vars.PRFX_ERR+"You already set your preference to play as a §1Counter-Terrorist§f!");
-                            } else {
-                                ct.add(p);
-                                p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §1Counter-Terrorist§f!");
-                            }
-                            p.closeInventory();
-                            break;
-                        case GRAY_STAINED_GLASS_PANE:
-                                if(t.contains(p)) {
-                                    t.remove(p);
-                                    p.sendMessage(Vars.PRFX_SCS+"Preference reset!");
-                                } else if(ct.contains(p)) {
-                                    ct.remove(p);
-                                    p.sendMessage(Vars.PRFX_SCS+"Preference reset!");
-                                } else {
-                                    p.sendMessage(Vars.PRFX_ERR+"You haven't set any preference yet!");
-                                }
-                            p.closeInventory();
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-
-                case "§aShop - left-click to buy, right-click to sell":
-                    e.setCancelled(true);
-
-                    if(e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR ) {
-                        return;
-                    }
-                    String clickedName = Objects.requireNonNull(e.getCurrentItem().getItemMeta()).getDisplayName().toLowerCase();
-
-
-                    if(clickedName.contains("usps")) {
-                        if(csplayer.getPistol().getType() != CSWeaponType.USPS) {
-                            if(csplayer.getBalance() < CSWeaponType.USPS.getCost()) {
-
-                                p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
-
-                            } else {
-                                p.getInventory().setItem(1, csplayer.getPistolItem());
-                                dropWeapon(csplayer.getPlayer().getEyeLocation(), csplayer.getPistol());
-                                csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
-                            }
-                        }
-                    }
-
-                    if(clickedName.contains("fiveseven")) {
-                        if(csplayer.getPistol().getType() != CSWeaponType.FIVESEVEN) {
-                            if(csplayer.getBalance() < CSWeaponType.FIVESEVEN.getCost()) {
-
-                                p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
-
-                            } else {
-                                p.getInventory().setItem(1, csplayer.getPistolItem());
-                                dropWeapon(csplayer.getPlayer().getEyeLocation(), csplayer.getPistol());
-                                csplayer.setPistol(new CSWeapon(CSWeaponType.FIVESEVEN));
-                            }
-                        }
-                    }
-
-
-
-                    break;
-
-                default:
-                    return;
-            }
-
-
-        }
-
-    }
 
     private void dropWeapon(Location loc, CSWeapon weapon) {
         Item dropped = Objects.requireNonNull(loc.getWorld()).dropItem(loc, weapon.getItem());
@@ -920,20 +802,29 @@ public class CounterShot extends Game implements Listener {
 
     @EventHandler
     public void onPickup(EntityPickupItemEvent e) throws Exception {
+        if(players == null) { return; }
         if(!(e.getEntity() instanceof Player)) {
             return;
         }
         Player p = (Player) e.getEntity();
 
+        if(!players.contains(p)) {
+            return;
+        }
+
+        if(this.phase == CSphase.PHASE_LOBBY || this.phase == CSphase.PHASE_OVER) {
+            e.setCancelled(true);
+            return;
+        }
         if(!CSplayers.contains(p)) {
             return;
         }
         CSPlayer csP = getPlayer(p);
 
-        if(!csP.isAlive() || this.phase == CSphase.PHASE_LOBBY || this.phase == CSphase.PHASE_OVER) {
+        if(!csP.isAlive()) {
             e.setCancelled(true);
+            return;
         }
-
         ItemStack pickedUp = e.getItem().getItemStack();
         int index = 0;
 
@@ -965,20 +856,168 @@ public class CounterShot extends Game implements Listener {
     }
 
 
+    //handles dropping an item in cs
     @EventHandler
     public void onDrop(PlayerDropItemEvent e) throws Exception {
         Player p = e.getPlayer();
         if(!players.contains(p)) {return;}
 
-        if(!(getPlayer(p).isAlive()) ||
-          e.getItemDrop().getItemStack().getType() == Material.BONE ||
+        CSPlayer csP = getPlayer(p);
+        if(!csP.isAlive() ||
           this.phase == CSphase.PHASE_LOBBY ||
           this.phase == CSphase.PHASE_OVER) {
             e.setCancelled(true);
         }
 
-
-        //TODO:
+        switch (e.getItemDrop().getItemStack().getType()) {
+            case STICK:
+                dropWeapon(p.getEyeLocation(), csP.getPistol());
+                csP.setPistol(new CSWeapon(CSWeaponType.NONE));
+                p.getInventory().setItem(1, new ItemStack(Material.AIR));
+                break;
+            case BLAZE_ROD:
+            case BREEZE_ROD:
+                dropWeapon(p.getEyeLocation(), csP.getPistol());
+                csP.setSecondary(new CSWeapon(CSWeaponType.NONE));
+                p.getInventory().setItem(2, new ItemStack(Material.AIR));
+                break;
+            case BOOK:
+                sendTMessage(Vars.PRFX_INFO+p.getDisplayName()+" has dropped the bomb at "+Vars.calculateNearestGameLocation(p.getLocation()));
+                return;
+            default:
+                e.setCancelled(true);
+                break;
+        }
     }
 
+    @EventHandler
+    public void onClick(InventoryClickEvent e) {
+        if(players == null) { return; }
+
+        if(!(e.getWhoClicked() instanceof Player)) { return; }
+        Player p = (Player) e.getWhoClicked();
+        if(!players.contains(p)) {return;}
+        CSPlayer csplayer;
+        try {
+            csplayer = getPlayer(p);
+        } catch(Exception ex) {
+            Bukkit.broadcastMessage("DEBUG: onClick() Method: "+ p.getDisplayName()  +" is not a csplayer");
+            return;
+        }
+
+        if(isInProgress()) {
+            switch (e.getView().getTitle()) {
+                case "Buy Menu":
+                    e.setCancelled(true);
+                    Inventory inv = e.getClickedInventory();
+                    break;
+
+                default:
+                    return;
+            }
+
+
+
+        } else {
+            switch (e.getView().getTitle()) {
+
+
+                case "Select Team":
+                    e.setCancelled(true);
+
+                    ItemStack clicked = e.getCurrentItem();
+
+                    switch (clicked.getType()) {
+                        case BOOK:
+                        case RED_STAINED_GLASS_PANE:
+                            if(ct.contains(p)) {
+                                ct.remove(p);
+                            }
+                            if(t.contains(p)) {
+                                p.sendMessage(Vars.PRFX_ERR+"You already set your preference to play as a §4Terrorist§f!");
+                            } else {
+                                t.add(p);
+                                p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §4Terrorist§f!");
+                            }
+                            p.closeInventory();
+                            break;
+                        case SHEARS:
+                        case BLUE_STAINED_GLASS_PANE:
+                            if(t.contains(p)) {
+                                t.remove(p);
+                            }
+                            if(ct.contains(p)) {
+                                p.sendMessage(Vars.PRFX_ERR+"You already set your preference to play as a §1Counter-Terrorist§f!");
+                            } else {
+                                ct.add(p);
+                                p.sendMessage(Vars.PRFX_SCS+"You set your preference to play as a §1Counter-Terrorist§f!");
+                            }
+                            p.closeInventory();
+                            break;
+                        case GRAY_STAINED_GLASS_PANE:
+                            if(t.contains(p)) {
+                                t.remove(p);
+                                p.sendMessage(Vars.PRFX_SCS+"Preference reset!");
+                            } else if(ct.contains(p)) {
+                                ct.remove(p);
+                                p.sendMessage(Vars.PRFX_SCS+"Preference reset!");
+                            } else {
+                                p.sendMessage(Vars.PRFX_ERR+"You haven't set any preference yet!");
+                            }
+                            p.closeInventory();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+                case "§aShop - left-click to buy, right-click to sell":
+                    e.setCancelled(true);
+
+                    if(e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR ) {
+                        return;
+                    }
+                    String clickedName = Objects.requireNonNull(e.getCurrentItem().getItemMeta()).getDisplayName().toLowerCase();
+
+
+                    if(clickedName.contains("usps")) {
+                        if(csplayer.getPistol().getType() != CSWeaponType.USPS) {
+                            if(csplayer.getBalance() < CSWeaponType.USPS.getCost()) {
+
+                                p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
+
+                            } else {
+                                p.getInventory().setItem(1, csplayer.getPistolItem());
+                                dropWeapon(csplayer.getPlayer().getEyeLocation(), csplayer.getPistol());
+                                csplayer.setPistol(new CSWeapon(CSWeaponType.USPS));
+                            }
+                        }
+                    }
+
+                    if(clickedName.contains("fiveseven")) {
+                        if(csplayer.getPistol().getType() != CSWeaponType.FIVESEVEN) {
+                            if(csplayer.getBalance() < CSWeaponType.FIVESEVEN.getCost()) {
+
+                                p.sendMessage(Vars.PRFX_ERR+"Not enough money.");
+
+                            } else {
+                                p.getInventory().setItem(1, csplayer.getPistolItem());
+                                dropWeapon(csplayer.getPlayer().getEyeLocation(), csplayer.getPistol());
+                                csplayer.setPistol(new CSWeapon(CSWeaponType.FIVESEVEN));
+                            }
+                        }
+                    }
+
+
+
+                    break;
+
+                default:
+                    return;
+            }
+
+
+        }
+
+    }
 }

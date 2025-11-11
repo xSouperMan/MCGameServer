@@ -8,3 +8,5 @@ commands:
     description: join a gamemode of your choice
   setspawn:
     description: set the lobby spawn
+  setgamelocation:
+    description: set a game location

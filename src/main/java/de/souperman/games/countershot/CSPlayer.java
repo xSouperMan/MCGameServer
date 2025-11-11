@@ -45,6 +45,8 @@ public class CSPlayer {
 
     public void setPistol(CSWeapon pistol) { this.pistol = pistol; }
 
+    public void setSecondary(CSWeapon secondary) { this.secondary = secondary; }
+
     public void setAlive(boolean b) { this.isAlive = b; }
 
     public void addBalance(int amount) {

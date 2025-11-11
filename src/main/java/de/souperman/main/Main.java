@@ -1,6 +1,7 @@
 package de.souperman.main;
 
 import de.souperman.commands.CMDjoin;
+import de.souperman.commands.CMDsetGameLocation;
 import de.souperman.commands.CMDsetspawn;
 import de.souperman.games.countershot.CSVar;
 import de.souperman.games.countershot.CounterShot;
@@ -45,6 +46,7 @@ public final class Main extends JavaPlugin {
         // register commands
         this.getCommand("join").setExecutor(new CMDjoin());
         this.getCommand("setspawn").setExecutor(new CMDsetspawn());
+        this.getCommand("setgamelocation").setExecutor(new CMDsetGameLocation());
 
         // initializer
         Vars.gamesInit();
